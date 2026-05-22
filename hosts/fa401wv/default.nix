@@ -15,6 +15,7 @@
     ../../modules/software/game/steam.nix
 
     ../../modules/software/desktop/hyprland.nix
+    ../../modules/software/desktop/niri.nix
   ];
 
   # nix-ld

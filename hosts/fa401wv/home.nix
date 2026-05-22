@@ -7,5 +7,6 @@
     ../../home-manager/code.nix
 
     ../../home-manager/desktop/hyprland
+    ../../home-manager/desktop/niri
   ];
 }
