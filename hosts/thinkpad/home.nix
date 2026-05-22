@@ -4,8 +4,9 @@
     ../../home-manager/core.nix
     ../../home-manager/applications.nix
     ../../home-manager/zsh.nix
+    ../../home-manager/code.nix
 
-    ../../home-manager/hyprland
+    ../../home-manager/desktop/hyprland
   ];
 
   home.packages = with pkgs; [

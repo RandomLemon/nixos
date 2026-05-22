@@ -89,10 +89,10 @@
         ];
       };
 
-      x220 = mkHost {
+      thinkpad = mkHost {
         system = "x86_64-linux";
-        hostModule = ./hosts/x220;
-        homeModule = ./hosts/x220/home.nix;
+        hostModule = ./hosts/thinkpad;
+        homeModule = ./hosts/thinkpad/home.nix;
       };
 
       msr1 = mkHost {

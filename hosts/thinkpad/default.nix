@@ -2,15 +2,16 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ../../modules/hardware/main
+    ../../modules/hardware
 
     ../../modules/software/system/main.nix
-    ../../modules/software/system/dev.nix
-    ../../modules/software/system/utils.nix
-    ../../modules/software/system/game.nix
+    ../../modules/software/system/secure.nix
+
+    ../../modules/software/develop/direnv.nix
+
     ../../modules/software/desktop/hyprland.nix
   ];
-  networking.hostName = lib.mkForce "x220";
+  networking.hostName = "thinkpad";
 
   # boot.kernelPackages = pkgs.linuxPackages_latest;
 }
