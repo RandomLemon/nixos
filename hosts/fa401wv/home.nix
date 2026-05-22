@@ -6,10 +6,6 @@
     ../../home-manager/zsh.nix
     ../../home-manager/code.nix
 
-    ../../home-manager/hyprland
-  ];
-
-  home.packages = with pkgs; [
-    wemeet
+    ../../home-manager/desktop/hyprland
   ];
 }

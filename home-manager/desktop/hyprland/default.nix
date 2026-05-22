@@ -1,38 +1,21 @@
+{ pkgs, config, ... }:
 {
-  pkgs,
-  config,
-  ...
-}: {
-  # xdg.configFile."hypr/hyprland.conf".enable = false;
-  home.packages = with pkgs; [
-    # Environment
-    libsForQt5.qt5.qtwayland
-    kdePackages.qtwayland
-    xlsclients
-    xwayland
-    kdePackages.qtsvg
+  imports = [
+    ../dunst
+    ../hypr
+    ../kitty
+    ../waybar
+    ../wlogout
+    ../wofi
 
-    # Hyprland
-    hyprpicker
-    hyprcursor
-    hyprlock
-    hypridle
-    hyprpaper
-    hyprshot
-    hyprtoolkit
-    wofi
-    wlogout
-    dunst
-    hyprshade
-    bibata-cursors
-
-    wl-clipboard
+    ./applications.nix
   ];
 
   services.hyprpolkitagent.enable = true;
   # services.hyprlauncher.enable = true;
   services.clipman.enable = true;
 
+  # xdg.configFile."hypr/hyprland.conf".enable = false;
   xdg.configFile."hypr/hyprland.conf".source = ./hyprland.conf;
   xdg.configFile."hypr/hyprlock.conf".source = ./hyprlock.conf;
   xdg.configFile."hypr/hyprpaper.conf".source = ./hyprpaper.conf;

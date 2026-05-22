@@ -1,10 +1,6 @@
 { config, lib, pkgs, username, ... }:
 
 {
-  imports = [
-
-  ];
-
   # Unfree software
   nixpkgs.config.allowUnfree = true;
 
@@ -26,12 +22,10 @@
   environment.pathsToLink = [ "/share/zsh" ];
   environment.shells = with pkgs; [ zsh ];
 
-  # Secure
-  security.pam.services.login.enableGnomeKeyring = true;
-  
   # Nix
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nix.settings.extra-substituters = [
+    "https://mirrors.cernet.edu.cn/nix-channels/store"
     "https://mirror.nju.edu.cn/nix-channels/store"
     "https://mirrors.ustc.edu.cn/nix-channels/store"
     "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
@@ -44,4 +38,32 @@
   nix.optimise.automatic = true;
 
   system.stateVersion = "25.05";
+
+  # Utils
+  environment.systemPackages = with pkgs; [
+    nano
+    vim
+    htop
+    btop
+    tree
+    curl
+    wget
+    fastfetch
+    s-tui
+    unzip
+    zip
+    unar
+    ntfs3g
+    toybox # Linux Utils
+    pciutils
+    usbutils
+    nvtopPackages.full
+    powertop
+  ];
+
+  # USB devices
+  services.udisks2.enable = true;
+
+  # 666
+  services.v2raya.enable = true;
 }

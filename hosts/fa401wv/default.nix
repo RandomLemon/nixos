@@ -2,22 +2,20 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ../../modules/hardware/main
-    ../../modules/hardware/fa401wv
+    ./hardware
+    ../../modules/hardware
 
     ../../modules/software/system/main.nix
-    ../../modules/software/system/dev.nix
-    ../../modules/software/system/game.nix
-    ../../modules/software/system/utils.nix
-    # ../../modules/software/system/waydroid.nix
+    ../../modules/software/system/secure.nix
+
+    ../../modules/software/develop/direnv.nix
+    ../../modules/software/develop/distrobox.nix
+
+    ../../modules/software/game/minecraft.nix
+    ../../modules/software/game/steam.nix
+
     ../../modules/software/desktop/hyprland.nix
   ];
-
-  # distrobox
-  virtualisation.podman = {
-    enable = true;
-    dockerCompat = true;
-  };
 
   # nix-ld
   programs.nix-ld.enable = true;
@@ -25,6 +23,6 @@
   # special environments
   environment.systemPackages = [
       alien-pkgs.nix-alien
-      pkgs.distrobox
+      pkgs.wemeet
   ];
 }

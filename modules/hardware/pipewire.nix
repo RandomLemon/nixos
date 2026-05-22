@@ -10,6 +10,6 @@
     alsa.support32Bit = true;
   };
   environment.systemPackages = with pkgs; [
-    pavucontrol
+    pwvucontrol
   ];
 }
