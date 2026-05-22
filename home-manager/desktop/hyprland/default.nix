@@ -2,7 +2,6 @@
 {
   imports = [
     ../dunst
-    ../hypr
     ../kitty
     ../waybar
     ../wlogout
