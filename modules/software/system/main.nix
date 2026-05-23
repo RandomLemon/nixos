@@ -24,7 +24,7 @@
 
   # Nix
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  nix.settings.extra-substituters = [
+  nix.settings.substituters = lib.mkForce [
     "https://mirrors.cernet.edu.cn/nix-channels/store"
     "https://mirror.nju.edu.cn/nix-channels/store"
     "https://mirrors.ustc.edu.cn/nix-channels/store"
