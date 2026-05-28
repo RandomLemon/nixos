@@ -66,4 +66,9 @@
 
   # 666
   services.v2raya.enable = true;
+
+  # polkit
+  security.polkit.enable = lib.mkDefault true;
+  # Secure
+  security.pam.services.login.enableGnomeKeyring = lib.mkDefault true;
 }

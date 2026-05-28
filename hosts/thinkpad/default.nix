@@ -5,7 +5,6 @@
     ../../modules/hardware
 
     ../../modules/software/system/main.nix
-    ../../modules/software/system/secure.nix
 
     ../../modules/software/develop/direnv.nix
 
