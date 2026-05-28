@@ -25,10 +25,10 @@
   # Nix
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nix.settings.substituters = lib.mkForce [
-    "https://mirrors.cernet.edu.cn/nix-channels/store"
-    "https://mirror.nju.edu.cn/nix-channels/store"
-    "https://mirrors.ustc.edu.cn/nix-channels/store"
-    "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
+    "https://mirrors.cernet.edu.cn/nix-channels/store?priority=10"
+    "https://mirror.nju.edu.cn/nix-channels/store?priority=50"
+    "https://mirrors.ustc.edu.cn/nix-channels/store?priority=50"
+    "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store?priority=50"
   ];
   nix.gc = {
     automatic = true;
