@@ -259,8 +259,9 @@ binds {
 
     // Powers off the monitors. To turn them back on, do any input like
     // moving the mouse or pressing any other key.
-    Mod+M { power-off-monitors; }
+    //Mod+M { power-off-monitors; }
 
+    
 
     // Example volume keys mappings for PipeWire & WirePlumber.
     // The allow-when-locked=true property makes them work even when the session is locked.
