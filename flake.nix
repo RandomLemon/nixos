@@ -2,6 +2,9 @@
   description = "Nix16 flake";
 
   nixConfig = {
+    substituters = [
+      "https://mirrors.cernet.edu.cn/nix-channels/store"
+    ];
     extra-substituters = [
       "https://mirrors.ustc.edu.cn/nix-channels/store"
       "https://mirror.nju.edu.cn/nix-channels/store"
