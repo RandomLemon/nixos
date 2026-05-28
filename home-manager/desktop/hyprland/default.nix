@@ -19,5 +19,5 @@
   xdg.configFile."hypr/hyprlock.conf".source = ./hyprlock.conf;
   xdg.configFile."hypr/hyprpaper.conf".source = ./hyprpaper.conf;
   xdg.configFile."hypr/hypridle.conf".source = ./hypridle.conf;
-  xdg.configFile."hypr/wallpaper/wallpaper.jpg".source = ./wallpaper/wallpaper.jpg;
+  xdg.configFile."hypr/wallpaper/wallpaper.jpg".source = ../wallpaper/wallpaper.jpg;
 }
