@@ -9,7 +9,7 @@
     ../../modules/software/develop/direnv.nix
 
     ../../modules/software/desktop/greetd.nix
-    ../../modules/software/desktop/hyprland.nix
+    ../../modules/software/desktop/niri.nix
   ];
   networking.hostName = "thinkpad";
 
