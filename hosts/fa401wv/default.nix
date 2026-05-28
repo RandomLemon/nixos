@@ -13,6 +13,7 @@
     ../../modules/software/game/minecraft.nix
     ../../modules/software/game/steam.nix
 
+    ../../modules/software/desktop/greetd.nix
     ../../modules/software/desktop/hyprland.nix
     ../../modules/software/desktop/niri.nix
   ];

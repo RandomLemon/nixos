@@ -19,4 +19,8 @@
     "org.freedesktop.impl.portal.FileChooser" = [ "kde" ]; # or "kde"
   };
   systemd.user.services.niri.enableDefaultPath = false;
+
+  security.polkit.enable = true; # polkit
+  services.gnome.gnome-keyring.enable = true; # secret service
+  security.pam.services.swaylock = {};
 }
