@@ -13,5 +13,10 @@
   #   };
   # };
 
+  programs.niri.enable = true;
+
+  xdg.portal.config.niri = {
+    "org.freedesktop.impl.portal.FileChooser" = [ "kde" ]; # or "kde"
+  };
   systemd.user.services.niri.enableDefaultPath = false;
 }
