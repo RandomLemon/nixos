@@ -2,9 +2,9 @@
 
 {
   # Dolphin fix
-  nixpkgs.overlays = [
-    (import ./dolphin-fix.nix)
-  ];
+  # nixpkgs.overlays = [
+  #   (import ./dolphin-fix.nix)
+  # ];
 
   # Wayland Desktop Environment Configuations.
   environment.sessionVariables.NIXOS_OZONE_WL = "1";

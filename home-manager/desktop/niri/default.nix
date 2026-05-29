@@ -14,6 +14,8 @@
     home.packages = with pkgs; [
         swaybg # wallpaper
         xwayland-satellite # xwayland support
+        wl-clipboard
+        bibata-cursors
     ];
 
     xdg.configFile."niri/config.kdl".source = ./niri.kdl;
