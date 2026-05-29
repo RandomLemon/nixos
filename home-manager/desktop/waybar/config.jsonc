@@ -1,7 +1,7 @@
 {
   "layer": "top",
   "position": "top",
-  "spacing": 4,
+  "spacing": 2,
   "margin-top": 0,
   "margin-left": 0,
   "margin-right": 0,
@@ -9,36 +9,35 @@
   "height": 24,
   "modules-left": [
     "clock",
+    "niri/window"
+  ],
+  "modules-center": [
+    "niri/workspaces"
+  ],
+  "modules-right": [
+    "tray",
     "cpu",
     "temperature",
     "memory",
     "disk",
-    "hyprland/window"
-  ],
-  "modules-center": [
-    "hyprland/workspaces"
-  ],
-  "modules-right": [
-    "tray",
-    "pulseaudio",
+    "battery#power",
+    "wireplumber",
     "backlight",
     "network",
     "battery"
   ],
   /* Center Module */
-  "hyprland/workspaces": {
-    "format": "{name}",
-    "persistent-workspaces": {
-      "*": 10
-    },
-    "on-click": "activate",
-    "on-scroll-up": "hyprctl dispatch workspace e+1",
-    "on-scroll-down": "hyprctl dispatch workspace e-1"
+  "niri/workspaces": {
+    "format": "{value}",
+    "on-scroll-up": "niri msg action focus-workspace-up",
+    "on-scroll-down": "niri msg action focus-workspace-down"
   },
   /* Left Modules */
-  "hyprland/window": {
-    "format": "\uf061 {initialTitle}",
-    "separate-outputs": true
+  "niri/window": {
+    "format": "\uf061 {title}",
+    "separate-outputs": true,
+    "icon": true,
+    "icon-size": 20
   },
   "cpu": {
     "interval": 5,
@@ -61,6 +60,10 @@
     "format": " {percentage_free}%",
     "tooltip": true,
     "tooltip-format": "Disk Usage: {free} / {total} ({percentage_free}%)"
+  },
+  "battery#power": {
+    "format": "󰢝 {power:0.2f}w",
+    "interval": 5
   },
   /* Right Modules */
   "tray": {
@@ -103,17 +106,14 @@
     "tooltip-format": "{ifname} {ipaddr}/{cidr} via {gwaddr}",
     "format-alt": "\uf6ff {ipaddr}/{cidr}"
   },
-  "pulseaudio": {
+  "wireplumber": {
     "scroll-step": 5,
-    "format": "{icon} {volume:2}%",
+    "format": "{icon} {volume}%",
     "format-muted": "\uf6a9",
-    "format-bluetooth": "{icon}\uf294 {volume}%",
-    "format-bluetooth-muted": "\ufa69 {icon}\uf294",
     "format-icons": {
       "default": ["\uf026", "\uf027", "\uf028"]
     },
-    // "on-click-right": "pavucontrol",
-    "ignored-sinks": ["AudioRelay Virtual Sink", "Recorder Sink"]
+    "on-click-right": "pwvucontrol"
   },
   "backlight": {
     "tooltip": false,
