@@ -86,7 +86,7 @@
         extraModules = [
           # chaotic.nixosModules.default # for cachyos kernel
           ({ pkgs, ... }: {
-            nixpkgs.overlays = [ nix-cachyos-kernel.overlays.pinned ];
+            nixpkgs.overlays = [ nix-cachyos-kernel.overlays.default ];
             boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest-lto-zen4;
           })
         ];
