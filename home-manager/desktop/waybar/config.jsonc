@@ -38,37 +38,36 @@
   
       // Icons by state
       // "active": "",
-      "default": ""
+      "default": "󰝥"
     },
     "on-scroll-up": "niri msg action focus-workspace-up",
     "on-scroll-down": "niri msg action focus-workspace-down"
   },
   /* Left Modules */
   "niri/window": {
-    "format": "\uf061 {title}",
+    "format": "󰈹 {title}",
     "separate-outputs": true,
     "icon": true,
     "icon-size": 20
   },
   "cpu": {
     "interval": 5,
-    "format": " {usage:2}%",
-    // "format": "\uf2db {usage:2}%",
+    "format": "󰻠 {usage:2}%",
     "tooltip": true
   },
   "temperature": {
     "critical-threshold": 85,
     "format": "{icon} {temperatureC}°C",
-    "format-icons": [""]
+    "format-icons": ["󰔏"]
   },
   "memory": {
     "interval": 5,
-    "format": "\uf538 {used:0.1f}G",
+    "format": "󰍛 {used:0.1f}G",
     "tooltip": true,
     "tooltip-format": " RAM: {used:0.2f}G / {total:0.2f}G\nSwap: {swapUsed:0.2f}G / {swapTotal:0.2f}G"
   },
   "disk": {
-    "format": " {percentage_free}%",
+    "format": "󰋊 {percentage_free}%",
     "tooltip": true,
     "tooltip-format": "Disk Usage: {free} / {total} ({percentage_free}%)"
   },
@@ -83,8 +82,8 @@
   },
   "clock": {
     "interval": 1,
-    "format": "\uf017 {:%H:%M}",
-    "format-alt": "\uf133 {:%Y-%m-%d %H:%M}",
+    "format": "󰥔 {:%H:%M}",
+    "format-alt": "󰃭 {:%Y-%m-%d %H:%M}",
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "calendar": {
       "mode": "month",
@@ -109,26 +108,25 @@
   },
   "network": {
     "interval": 5,
-    // "format-wifi": "\uf1eb {essid} ({signalStrength}%)",
-    "format-wifi": "\uf1eb {signalStrength}%",
-    "format-ethernet": "\uf6ff {ifname}",
-    "format-linked": "\uf059 No IP ({ifname})",
-    "format-disconnected": "\uf071 Disconnected",
+    "format-wifi": "󰤨 {signalStrength}%",
+    "format-ethernet": "󰈀 {ifname}",
+    "format-linked": "󰖪 No IP ({ifname})",
+    "format-disconnected": "󰤭 Disconnected",
     "tooltip-format": "{ifname} {ipaddr}/{cidr} via {gwaddr}",
-    "format-alt": "\uf6ff {ipaddr}/{cidr}"
+    "format-alt": "󰈀 {ipaddr}/{cidr}"
   },
   "wireplumber": {
     "scroll-step": 5,
     "format": "{icon} {volume}%",
-    "format-muted": "\uf6a9",
+    "format-muted": "󰝟",
     "format-icons": {
-      "default": ["\uf026", "\uf027", "\uf028"]
+      "default": ["󰕿", "󰖀", "󰕾"]
     },
     "on-click-right": "pwvucontrol"
   },
   "backlight": {
     "tooltip": false,
-    "format": " {}%",
+    "format": "󰃠 {}%",
     "interval": 5,
     "on-scroll-up": "brightnessctl set 5%+",
     "on-scroll-down": "brightnessctl set 5%-"
@@ -139,10 +137,10 @@
       "warning": 30,
       "critical": 20
     },
-    "format": "{icon}  {capacity}%",
-    "format-charging": " {capacity}%",
-    "format-plugged": " {capacity}%",
+    "format": "{icon} {capacity}%",
+    "format-charging": "󰂄 {capacity}%",
+    "format-plugged": "󰂄 {capacity}%",
     "format-alt": "{time} {icon}",
-    "format-icons": ["", "", "", "", ""]
+    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁾"]
   }
 }

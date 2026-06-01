@@ -1,9 +1,6 @@
 * {
-  /* `otf-font-awesome` is required to be installed for icons */
-  /*font-family: "Hack Nerd Font Mono", "Font Awesome 6 Free";*/
-  /*font-family: "IntelOne Mono", "Font Awesome 6 Free";*/
-  font-family: "Hack Nerd Font Mono", "Font Awesome 6 Free", monospace;
-  font-weight: 500;
+  font-family: monospace, "FiraCode Nerd Font";
+  font-weight: 400;
   font-size: 12px;
   text-shadow: none;
 
