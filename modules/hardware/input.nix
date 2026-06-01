@@ -24,13 +24,24 @@
       kdePackages.fcitx5-chinese-addons
     ];
   };
+
+  # Fonts
   fonts.enableDefaultPackages = true;
   fonts.packages = with pkgs; [
     noto-fonts
     noto-fonts-cjk-sans
+    noto-fonts-color-emoji
+    liberation_ttf
     font-awesome_6
-    nerd-fonts.fira-code
+    fira-code
+    fira-code-symbols
   ];
+  fonts.fontconfig.defaultFonts = {
+    sansSerif = [ "Noto Sans CJK SC" "Noto Sans" "DejaVu Sans" ];
+    serif     = [ "Noto Serif CJK SC" "DejaVu Serif" ];
+    monospace = [ "FiraCode Nerd Font" "Noto Sans Mono CJK SC" "DejaVu Sans Mono" ];
+  };
+
   console = {
     font = "Lat2-Terminus16";
     # keyMap = "us";
