@@ -13,6 +13,11 @@ prefer-no-csd
 // You can also set this to null to disable saving screenshots to disk.
 screenshot-path null
 
+cursor {
+    xcursor-theme "Bibata-Modern-Classic"
+    xcursor-size 24
+}
+
 // Animation settings.
 // The wiki explains how to configure individual animations:
 // https://niri-wm.github.io/niri/Configuration:-Animations
@@ -22,6 +27,18 @@ animations {
 
     // Slow down all animations by this factor. Values below 1 speed them up instead.
     // slowdown 3.0
+}
+
+overview {
+    workspace-shadow {
+        off
+    }
+}
+
+gestures {
+    hot-corners {
+        off
+    }
 }
 
 // Fix for FA401WV

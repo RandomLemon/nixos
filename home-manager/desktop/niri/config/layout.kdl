@@ -88,6 +88,7 @@ layout {
         // The settings are the same as for the focus ring.
         // If you enable the border, you probably want to disable the focus ring.
         // off
+        on
 
         width 2
         // active-color "#00ddff"
@@ -99,7 +100,7 @@ layout {
         // Gradients can use a few different interpolation color spaces.
         // For example, this is a pastel rainbow gradient via in="oklch longer hue".
         //
-        active-gradient from="#00ddff" to="#ffb6c1" angle=45 relative-to="workspace-view" in="oklch longer hue"
+        active-gradient from="#00ddff" to="#ffb6c1" angle=0 relative-to="workspace-view" in="oklch longer hue"
 
         // inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
     }
@@ -108,6 +109,7 @@ layout {
     shadow {
         // Uncomment the next line to enable shadows.
         // on
+        off
 
         // By default, the shadow draws only around its window, and not behind it.
         // Uncomment this setting to make the shadow draw behind its window.
