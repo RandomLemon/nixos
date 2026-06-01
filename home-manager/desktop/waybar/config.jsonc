@@ -28,7 +28,18 @@
   ],
   /* Center Module */
   "niri/workspaces": {
-    "format": "{value}",
+    "format": "{icon}",
+    "format-icons": {
+      // Named workspaces
+      // (you need to configure them in niri)
+      "web": "",
+      "code": "</>",
+      "chat": "<b></b>",
+  
+      // Icons by state
+      "active": "",
+      "default": ""
+    },
     "on-scroll-up": "niri msg action focus-workspace-up",
     "on-scroll-down": "niri msg action focus-workspace-down"
   },

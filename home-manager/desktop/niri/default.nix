@@ -32,4 +32,5 @@
     xdg.configFile."niri/wallpaper.kdl".source = ./config/wallpaper.kdl;
     xdg.configFile."niri/windowrule.kdl".source = ./config/windowrule.kdl;
     xdg.configFile."niri/misc.kdl".source = ./config/misc.kdl;
+    xdg.configFile."niri/workspace.kdl".source = ./config/workspace.kdl;
 }
