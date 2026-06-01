@@ -15,9 +15,9 @@
   color: white;
   border:rgba(0, 0, 0, 1) solid 2px;
   padding: 0.8rem 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   font-size: 1.2rem;
-  border-radius: 2rem;
+  border-radius: 4px;
 }
 #window #outer-box #input:focus, #window #outer-box #input:focus-visible, #window #outer-box #input:active {
   border:#00ddff solid 2px;
