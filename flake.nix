@@ -2,14 +2,12 @@
   description = "Nix16 flake";
 
   nixConfig = {
-    substituters = [
-      "https://mirrors.cernet.edu.cn/nix-channels/store"
-    ];
     extra-substituters = [
       "https://mirrors.ustc.edu.cn/nix-channels/store"
       "https://mirror.nju.edu.cn/nix-channels/store"
       "https://mirror.sjtu.edu.cn/nix-channels/store"
       "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
+      "https://mirrors.cernet.edu.cn/nix-channels/store"
       "https://nix-community.cachix.org"
       # "https://chaotic-nyx.cachix.org"
       # "https://attic.xuyh0120.win/lantian" # cachyos kernel, from https://github.com/xddxdd/nix-cachyos-kernel
@@ -83,13 +81,13 @@
           alien-pkgs = nix-alien.packages.x86_64-linux;
           # pkgs-stable = nixpkgs-stable.legacyPackages.x86_64-linux;
         };
-        extraModules = [
-          # chaotic.nixosModules.default # for cachyos kernel
-          ({ pkgs, ... }: {
-            nixpkgs.overlays = [ nix-cachyos-kernel.overlays.default ];
-            boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest-lto-zen4;
-          })
-        ];
+        # extraModules = [
+        #   # chaotic.nixosModules.default # for cachyos kernel
+        #   ({ pkgs, ... }: {
+        #     nixpkgs.overlays = [ nix-cachyos-kernel.overlays.pinned ];
+        #     boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest-lto-zen4;
+        #   })
+        # ];
       };
 
       thinkpad = mkHost {

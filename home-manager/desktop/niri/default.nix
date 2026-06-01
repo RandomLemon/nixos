@@ -2,6 +2,7 @@
 {
     imports = [
         ../waybar
+        ../wofi
     ];
 
     programs.alacritty.enable = true; # Super+T in the default setting (terminal)
