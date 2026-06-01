@@ -45,7 +45,7 @@ tooltip {
   margin: 4px 0;
   padding: 2px 6px;
   color: #f0f0f0;
-  background: #242424;
+  background: #323232;
 }
 
 /* left */
@@ -55,8 +55,8 @@ tooltip {
 #tray,
 #window {
   margin-left: 4px;
-  border-top-left-radius: 8px;
-  border-bottom-left-radius: 8px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 
 /* right */
@@ -66,8 +66,8 @@ tooltip {
 #tray,
 #window {
   margin-right: 4px;
-  border-top-right-radius: 8px;
-  border-bottom-right-radius: 8px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 /* workspaces */
@@ -75,7 +75,7 @@ tooltip {
   /* border: rgba(255, 255, 255, 0.2) solid 2px; */
   margin: 4px 0;
   padding: 0;
-  background: #242424;
+  background: #323232;
   transition: none;
   border-radius: 8px;
 }
