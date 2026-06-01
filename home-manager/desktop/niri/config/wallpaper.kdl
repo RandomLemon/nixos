@@ -1,0 +1,10 @@
+// Wallpaper via swaybg (image deployed to ~/.config/niri/wallpaper/wallpaper.jpg).
+spawn-sh-at-startup "swaybg -m fill -i ~/.config/niri/wallpaper/wallpaper.jpg"
+
+// 使壁纸保持静止，而不是随工作区移动。
+layer-rule {
+    // 这是针对 swaybg 的；其他壁纸工具请相应更改。
+    // 通过运行 niri msg layers 找到正确的命名空间。
+    match namespace="^wallpaper$"
+    place-within-backdrop true
+}
