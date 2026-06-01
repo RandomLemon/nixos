@@ -32,12 +32,12 @@
     "format-icons": {
       // Named workspaces
       // (you need to configure them in niri)
-      "web": "",
-      "code": "</>",
-      "chat": "<b></b>",
+      "web": "🌐",
+      "code": "⌨️",
+      "chat": "💬",
   
       // Icons by state
-      "active": "",
+      // "active": "",
       "default": ""
     },
     "on-scroll-up": "niri msg action focus-workspace-up",
