@@ -32,9 +32,7 @@
     noto-fonts-cjk-sans
     noto-fonts-color-emoji
     liberation_ttf
-    font-awesome_6
-    fira-code
-    fira-code-symbols
+    nerd-fonts.fira-code
   ];
   fonts.fontconfig.defaultFonts = {
     sansSerif = [ "Noto Sans CJK SC" "Noto Sans" "DejaVu Sans" ];
