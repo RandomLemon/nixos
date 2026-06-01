@@ -92,7 +92,7 @@ layout {
 
         width 2
         // active-color "#00ddff"
-        inactive-color "#909090"
+        // inactive-color "#909090"
 
         // Color of the border around windows that request your attention.
         urgent-color "#9b0000"
@@ -100,9 +100,9 @@ layout {
         // Gradients can use a few different interpolation color spaces.
         // For example, this is a pastel rainbow gradient via in="oklch longer hue".
         //
-        active-gradient from="#00ddff" to="#ffb6c1" angle=0 relative-to="workspace-view" in="oklch longer hue"
+        active-gradient from="#00ddff" to="#ffb6c1" angle=90 relative-to="workspace-view" in="oklch longer hue"
 
-        // inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
+        inactive-gradient from="#505050" to="#a0a0a0" angle=90 relative-to="workspace-view"
     }
 
     // You can enable drop shadows for windows.

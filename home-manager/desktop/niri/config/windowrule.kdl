@@ -40,3 +40,7 @@ window-rule {
     geometry-corner-radius 4
     clip-to-geometry true
 }
+
+window-rule {
+    draw-border-with-background false
+}
