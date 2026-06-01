@@ -2,7 +2,7 @@
 
 {
   # ASUS
-  services.supergfxd.enable = true;
+  # services.supergfxd.enable = true; # Deprecated!
   services = {
     asusd = {
       enable = true;
