@@ -1,5 +1,5 @@
-// Wallpaper via swaybg (image deployed to ~/.config/niri/wallpaper/wallpaper.jpg).
-spawn-sh-at-startup "swaybg -m fill -i ~/.config/niri/wallpaper/wallpaper.jpg"
+// Wallpaper via swaybg (image deployed to ~/.config/wallpaper/wallpaper.jpg).
+spawn-sh-at-startup "swaybg -m fill -i ~/.config/wallpaper/wallpaper.jpg"
 
 // 使壁纸保持静止，而不是随工作区移动。
 layer-rule {
