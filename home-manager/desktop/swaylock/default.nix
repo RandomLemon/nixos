@@ -6,15 +6,15 @@
       scaling = "fill";
 
       # Slight dim so the unlock indicator stays readable on bright wallpapers.
-      color = "00000066";
+      color = "00000060";
 
-      "font-size" = 24;
-      "indicator-radius" = 120;
+      "font-size" = 12;
+      "indicator-radius" = 60;
       "indicator-idle-visible" = true;
       "ring-color" = "00ddff";
-      "line-color" = "00ddff";
+      "line-color" = "000000";
       "text-color" = "ffffff";
-      "key-hl-color" = "00ddff";
+      "key-hl-color" = "000000";
       "separator-color" = "00ddff80";
       "show-failed-attempts" = true;
     };

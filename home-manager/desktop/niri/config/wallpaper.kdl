@@ -10,5 +10,5 @@ layer-rule {
 }
 
 layout {
-    background-color "#00000080"
+    background-color "#00000040"
 }
