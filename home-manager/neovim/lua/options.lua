@@ -20,5 +20,3 @@ vim.opt.scrolloff = 8
 vim.opt.sidescrolloff = 8
 vim.opt.splitbelow = true
 vim.opt.splitright = true
-
-vim.cmd.colorscheme("adwaita-dark")

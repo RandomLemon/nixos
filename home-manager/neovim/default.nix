@@ -30,6 +30,8 @@ in
     enable = true;
     viAlias = true;
     vimAlias = true;
+    withPython3 = true;
+    withRuby = false;
 
     extraPackages = with pkgs; [
       # LSP / formatters
@@ -70,7 +72,7 @@ in
       {
         plugin = nvim-treesitter;
         config = ''
-          require("nvim-treesitter.configs").setup({
+          require("nvim-treesitter").setup({
             highlight = { enable = true },
             indent = { enable = true },
             auto_install = false,
@@ -136,7 +138,7 @@ in
       { plugin = vim-commentary; }
     ];
 
-    extraLuaConfig = ''
+    initLua = ''
       require("options")
       require("keymaps")
     '';

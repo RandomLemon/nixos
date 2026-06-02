@@ -31,5 +31,6 @@ local servers = {
 for name, config in pairs(servers) do
   config.capabilities = capabilities
   config.on_attach = on_attach
-  require("lspconfig")[name].setup(config)
+  vim.lsp.config(name, config)
+  vim.lsp.enable(name)
 end
