@@ -31,13 +31,18 @@
     noto-fonts
     noto-fonts-cjk-sans
     noto-fonts-color-emoji
-    liberation_ttf
-    nerd-fonts.fira-code
+    jetbrains-mono
+    nerd-fonts.jetbrains-mono
   ];
   fonts.fontconfig.defaultFonts = {
     sansSerif = [ "Noto Sans CJK SC" "Noto Sans" "DejaVu Sans" ];
-    serif     = [ "Noto Serif CJK SC" "DejaVu Serif" ];
-    monospace = [ "FiraCode Nerd Font" "Noto Sans Mono CJK SC" "DejaVu Sans Mono" ];
+    serif     = [ "Noto Serif" "DejaVu Serif" ];
+    monospace = [
+      "JetBrainsMono Nerd Font"
+      "JetBrains Mono"
+      "Noto Sans Mono CJK SC"
+      "DejaVu Sans Mono"
+    ];
   };
 
   console = {

@@ -32,20 +32,20 @@
     "format-icons": {
       // Named workspaces
       // (you need to configure them in niri)
-      "web": "🌐",
-      "code": "⌨️",
-      "chat": "💬",
+      "web": "󰈹",
+      "code": "⌨",
+      "chat": "🗩️",
   
       // Icons by state
       // "active": "",
-      "default": "󰝥"
+      "default": "●"
     },
     "on-scroll-up": "niri msg action focus-workspace-up",
     "on-scroll-down": "niri msg action focus-workspace-down"
   },
   /* Left Modules */
   "niri/window": {
-    "format": "󰈹 {title}",
+    "format": "{title}",
     "separate-outputs": true,
     "icon": true,
     "icon-size": 20
