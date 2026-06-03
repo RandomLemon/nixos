@@ -1,5 +1,5 @@
--- UI
-vim.cmd.colorscheme("adwaita-dark")
+-- UI (adwaita-nvim: colorscheme name is "adwaita", darker via g:adwaita_darker)
+vim.g.adwaita_darker = true
 
 require("ibl").setup({
   indent = { char = "│" },
@@ -7,7 +7,7 @@ require("ibl").setup({
 })
 
 require("lualine").setup({
-  options = { theme = "auto" },
+  options = { theme = "adwaita" },
 })
 
 -- Git
@@ -21,6 +21,8 @@ require("nvim-treesitter").setup({
   indent = { enable = true },
   auto_install = false,
 })
+
+vim.cmd.colorscheme("adwaita")
 
 -- Telescope
 require("telescope").load_extension("fzf")

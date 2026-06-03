@@ -66,5 +66,10 @@ in
     '';
   };
 
+  home.packages = with pkgs; [
+    ripgrep
+    fd
+  ];
+
   xdg.configFile."nvim/lua".source = ./lua;
 }
