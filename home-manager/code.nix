@@ -6,6 +6,6 @@
   };
 
   home.packages = with pkgs; [
-    code-cursor
+    code-cursor-fhs
   ];
 }
