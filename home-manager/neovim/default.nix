@@ -6,6 +6,7 @@ let
     # UI
     adwaita-nvim
     nvim-web-devicons
+    nvim-tree-lua
     indent-blankline-nvim
     lualine-nvim
 

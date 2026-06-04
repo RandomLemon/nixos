@@ -14,6 +14,10 @@ map("<C-j>", "<C-w>j", "Window down")
 map("<C-k>", "<C-w>k", "Window up")
 map("<C-l>", "<C-w>l", "Window right")
 
+-- File tree
+map("<leader>fe", "<cmd>NvimTreeToggle<cr>", "Toggle file tree")
+map("<leader>fE", "<cmd>NvimTreeFindFileToggle<cr>", "Reveal file in tree")
+
 -- Telescope
 map("<leader>ff", "<cmd>Telescope find_files<cr>", "Find files")
 map("<leader>fg", "<cmd>Telescope live_grep<cr>", "Live grep")
