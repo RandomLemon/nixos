@@ -3,19 +3,11 @@
 
   nixConfig = {
     extra-substituters = [
-      "https://mirrors.ustc.edu.cn/nix-channels/store"
-      "https://mirror.nju.edu.cn/nix-channels/store"
-      "https://mirror.sjtu.edu.cn/nix-channels/store"
-      # "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
-      # "https://mirrors.cernet.edu.cn/nix-channels/store"
+      "https://mirrors.cernet.edu.cn/nix-channels/store"
       "https://nix-community.cachix.org"
-      # "https://chaotic-nyx.cachix.org"
-      # "https://attic.xuyh0120.win/lantian" # cachyos kernel, from https://github.com/xddxdd/nix-cachyos-kernel
     ];
     extra-trusted-public-keys = [
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-      # "chaotic-nyx.cachix.org-1:HfnXSw4pj95iI/n17rIDy40agHj12WfF+Gqk6SonIT8="
-      # "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc=" # cachyos kernel
     ];
   };
 
@@ -25,8 +17,6 @@
     # home-manager.url = "github:nix-community/home-manager/release-25.11";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    # hyprland.url = "github:hyprwm/Hyprland";
-    # chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable"; # for cachyos kernel
     nix-alien.url = "github:thiagokokada/nix-alien";
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release"; # for cachyos kernel
   };
@@ -57,6 +47,7 @@
     nixpkgs.lib.nixosSystem {
       inherit specialArgs;
       modules = [
+        { nix.settings.trusted-users = [ username ]; }
         hostModule
       ]
       ++ (if homeModule != null then [
