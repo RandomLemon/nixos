@@ -48,7 +48,7 @@
     zip
     unar
     ntfs3g
-    toybox # Linux Utils
+    # toybox # Linux Utils
     pciutils
     usbutils
     nvtopPackages.full
