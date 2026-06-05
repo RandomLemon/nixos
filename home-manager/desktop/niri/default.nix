@@ -5,13 +5,13 @@
         ../mako
         ../wallpaper
         ../swaylock
+        ../swayidle
         ../waybar
         ../wofi
         ../wlogout
     ];
     programs.fuzzel.enable = true; # Super+D in the default setting (app launcher)
     programs.waybar.enable = true; # launch on startup in the default setting (bar)
-    services.swayidle.enable = true; # idle management daemon
     services.polkit-gnome.enable = true; # polkit
     home.packages = with pkgs; [
         swaybg # wallpaper
