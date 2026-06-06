@@ -233,7 +233,28 @@
         "home-manager": "home-manager",
         "nix-alien": "nix-alien",
         "nix-cachyos-kernel": "nix-cachyos-kernel",
-        "nixpkgs": "nixpkgs_3"
+        "nixpkgs": "nixpkgs_3",
+        "x1e-nixos-config": "x1e-nixos-config"
+      }
+    },
+    "x1e-nixos-config": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1780675584,
+        "narHash": "sha256-h1gCXUrY86PTcs1k6O1/q7m1aXvRhx90zz0UOy3MS5w=",
+        "owner": "kuruczgy",
+        "repo": "x1e-nixos-config",
+        "rev": "c0e81c4a38cde823898f5c6d8cab62d17a5ea3ea",
+        "type": "github"
+      },
+      "original": {
+        "owner": "kuruczgy",
+        "repo": "x1e-nixos-config",
+        "type": "github"
       }
     }
   },

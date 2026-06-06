@@ -19,6 +19,8 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     nix-alien.url = "github:thiagokokada/nix-alien";
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release"; # for cachyos kernel
+    x1e-nixos-config.url = "github:kuruczgy/x1e-nixos-config";
+    x1e-nixos-config.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = {
@@ -29,6 +31,7 @@
     # chaotic,
     nix-alien,
     nix-cachyos-kernel,
+    x1e-nixos-config,
     ...
   }@inputs:
   let
@@ -90,6 +93,15 @@
       msr1 = mkHost {
         system = "aarch64-linux";
         hostModule = ./hosts/msr1;
+      };
+
+      yoga = mkHost {
+        system = "aarch64-linux";
+        hostModule = ./hosts/yoga;
+        homeModule = ./hosts/fa401wv/home.nix;
+        extraModules = [
+          x1e-nixos-config.nixosModules.x1e
+        ];
       };
     };
   };
