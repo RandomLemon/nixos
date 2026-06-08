@@ -2,7 +2,6 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ./hardware
     ../../modules/hardware
 
     ../../modules/software/system/main.nix
