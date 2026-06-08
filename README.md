@@ -160,7 +160,7 @@ modules/hardware/
 
 modules/software/
   system/         # base OS policy and common CLI tools
-  desktop/        # greetd, niri, hyprland, KDE, LXQt
+  desktop/        # greetd, niri, KDE, LXQt
   develop/        # direnv, distrobox, docker, mysql
   game/           # Steam, Minecraft / Prism Launcher, Waydroid
   3rd/            # third-party packages
@@ -186,7 +186,6 @@ Important files:
 - `zsh.nix` configures Zsh, Oh My Zsh, shell plugins, and aliases.
 - `code.nix` installs and configures VS Code / Cursor.
 - `desktop/niri/` contains the active Niri desktop configuration.
-- `desktop/hyprland/` contains an alternative Hyprland desktop setup.
 
 Home Manager is not used as a standalone command here. It is wired into the
 NixOS rebuild through `flake.nix`.
@@ -207,7 +206,7 @@ System-level desktop pieces live in `modules/software/desktop/`:
 
 - `greetd.nix` configures the login manager.
 - `niri.nix` enables Niri and supporting desktop services.
-- `hyprland.nix`, `kde.nix`, and `lxqt.nix` are alternative desktop modules.
+- `kde.nix` and `lxqt.nix` are alternative desktop modules.
 
 User-level desktop configuration lives under `home-manager/desktop/`:
 
@@ -215,18 +214,6 @@ User-level desktop configuration lives under `home-manager/desktop/`:
 - `desktop/niri/*.kdl` split the Niri configuration into focused files for
   input, outputs, keybindings, layout, startup commands, and window rules.
 - `desktop/waybar/` contains the bar configuration.
-- `desktop/hyprland/` keeps the older Hyprland setup available as a reference
-  or alternate session.
-
-To switch between Niri and Hyprland, change both layers:
-
-1. In the host system file, switch the imported desktop module, for example in
-   `hosts/fa401wv/default.nix`.
-2. In the host Home Manager file, switch the imported user desktop module, for
-   example in `hosts/fa401wv/home.nix`.
-
-Keeping the system session and the Home Manager desktop files in sync avoids a
-login session that starts without the matching user tools.
 
 ## Hardware Notes
 

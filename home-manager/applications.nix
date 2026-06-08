@@ -5,7 +5,7 @@
     chromium
     # (vscode.override { commandLineArgs = "--enable-wayland-ime %F"; })
     seafile-client
-    qq
+    # qq
     v2ray
     v2raya
     libreoffice-qt6-fresh
