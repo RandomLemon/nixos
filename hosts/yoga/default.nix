@@ -32,12 +32,12 @@
 
   # Default: x1e-nixos-config 6.19 kernel via hardware.lenovo-yoga-slim7x.enable.
   # Boot entry "ubuntu-concept" uses the Ubuntu Concept 7.0 qcom-x1e kernel instead.
-  specialisation = {
-    ubuntu-concept.configuration = {
-      system.nixos.tags = [ "ubuntu-concept" ];
-      boot.kernelPackages = lib.mkForce (
-        pkgs.callPackage ./kernel/ubuntu-concept.nix { }
-      );
-    };
-  };
+  # specialisation = {
+  #   ubuntu-concept.configuration = {
+  #     system.nixos.tags = [ "ubuntu-concept" ];
+  #     boot.kernelPackages = lib.mkForce (
+  #       pkgs.callPackage ./kernel/ubuntu-concept.nix { }
+  #     );
+  #   };
+  # };
 }

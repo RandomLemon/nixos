@@ -21,8 +21,8 @@ let
 
         src = fetchgit {
           url = "https://git.launchpad.net/~ubuntu-concept/ubuntu/+source/linux/+git/resolute";
-          rev = "d997b73be317eed5dd6e617028769fb48addc3db"; # qcom-x1e-7.0 @ 7.0.0-22.22
-          hash = "sha256-wTHhj7UuY6TJSiq0FcbGzH+x4UbQdtiOKPBAmupkn5A=";
+          rev = "a152b333906155734e541b64ddbb687cb0801da6"; # qcom-x1e-7.0 @ 7.0.0-33.33
+          hash = "sha256-YT7VdaVnYfToOFpS6yPboqhax1S37jtjKTFWOOqpBqc=";
         };
 
         # Matches debian.qcom-x1e/rules.d/arm64.mk (defconfig = defconfig).
@@ -35,6 +35,15 @@ let
           KVM = yes;
           MAGIC_SYSRQ = yes;
           EC_LENOVO_YOGA_SLIM7X = module;
+
+          # Required by Ubuntu qcom-x1e annotations; missing from plain defconfig
+          # and causes AppArmor secmark code in security/apparmor/lsm.c to fail.
+          NETWORK_SECMARK = yes;
+          SECURITY_APPARMOR = yes;
+          NETFILTER = yes;
+
+          # Not used on Snapdragon X Elite; skip to save compile time.
+          DRM_AMDGPU = no;
 
           # Trim unrelated platforms to reduce build time (from x1e-nixos-config).
           ACPI = no;

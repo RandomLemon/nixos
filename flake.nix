@@ -19,7 +19,7 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     nix-alien.url = "github:thiagokokada/nix-alien";
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release"; # for cachyos kernel
-    x1e-nixos-config.url = "github:kuruczgy/x1e-nixos-config";
+    x1e-nixos-config.url = "github:RandomLemon/x1e-nixos-config";
     x1e-nixos-config.inputs.nixpkgs.follows = "nixpkgs";
   };
 

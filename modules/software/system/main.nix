@@ -53,6 +53,8 @@
     usbutils
     nvtopPackages.full
     powertop
+
+    nixd
   ];
 
   # USB devices
