@@ -1,5 +1,5 @@
-# Ubuntu Concept linux-qcom-x1e 7.0 kernel (qcom-x1e-7.0 branch).
-# Source: https://code.launchpad.net/~ubuntu-concept/ubuntu/+source/linux/+git/resolute
+# Ubuntu Concept linux-qcom-x1e 7.1rc kernel (jg/ubuntu-qcom-x1e-7.1rc branch).
+# Source: https://github.com/jglathe/linux_ms_dev_kit/tree/jg/ubuntu-qcom-x1e-7.1rc
 {
   lib,
   fetchgit,
@@ -16,19 +16,19 @@ let
       args
       // rec {
         pname = "linux";
-        version = "7.0.0";
-        modDirVersion = "7.0.0";
+        version = "7.1.0-rc6";
+        modDirVersion = "7.1.0-rc6";
 
         src = fetchgit {
-          url = "https://git.launchpad.net/~ubuntu-concept/ubuntu/+source/linux/+git/resolute";
-          rev = "a152b333906155734e541b64ddbb687cb0801da6"; # qcom-x1e-7.0 @ 7.0.0-33.33
-          hash = "sha256-YT7VdaVnYfToOFpS6yPboqhax1S37jtjKTFWOOqpBqc=";
+          url = "https://github.com/jglathe/linux_ms_dev_kit.git";
+          rev = "ed172acddb4f371e0bb79088619f007a67d196e7"; # jg/ubuntu-qcom-x1e-7.1rc
+          hash = "sha256-FsmDBYYK80DTukzA0gr7iMaBE/nkDFUPgpx0rW5dDg8=";
         };
 
         # Matches debian.qcom-x1e/rules.d/arm64.mk (defconfig = defconfig).
         defconfig = "defconfig";
         ignoreConfigErrors = true;
-        extraMeta.branch = "7.0";
+        extraMeta.branch = "7.1";
 
         structuredExtraConfig = with lib.kernel; {
           VIRTUALIZATION = yes;

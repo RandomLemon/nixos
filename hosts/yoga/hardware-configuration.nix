@@ -4,14 +4,6 @@
 { config, lib, pkgs, modulesPath, ... }:
 
 {
-  imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix")
-    ];
-
-  boot.initrd.availableKernelModules = [ "nvme" "uas" ];
-  boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ ];
-  boot.extraModulePackages = [ ];
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/acf0c7be-f38f-453f-baf0-5b9d2dc907ed";
@@ -35,6 +27,11 @@
     { device = "/dev/disk/by-uuid/acf0c7be-f38f-453f-baf0-5b9d2dc907ed";
       fsType = "btrfs";
       options = [ "subvol=@log" "compress=zstd" ];
+    };
+
+  fileSystems."/boot" =
+    { device = "/dev/disk/by-uuid/0AD4-49DD";
+      fsType = "vfat";
     };
 
   swapDevices = [ ];
