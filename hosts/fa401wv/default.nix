@@ -25,4 +25,16 @@
       alien-pkgs.nix-alien
       pkgs.wemeet
   ];
+
+  # Steam — force AMD iGPU (Strix 880M/890M @ 1002:150e, PCI 65:00.0).
+  # Proton/DXVK otherwise prefer the NVIDIA dGPU despite PRIME offload defaults.
+  programs.steam = {
+    package = pkgs.steam.override {
+      extraEnv = {
+        __GLX_VENDOR_LIBRARY_NAME = "mesa";
+        DRI_PRIME = "pci-0000_65_00_0";
+        MESA_VK_DEVICE_SELECT = "1002:150e!";
+      };
+    };
+  };
 }
