@@ -20,7 +20,6 @@
     "temperature",
     "memory",
     "disk",
-    "battery#power",
     "wireplumber",
     "backlight",
     "network",
@@ -70,10 +69,6 @@
     "format": "󰋊 {percentage_free}%",
     "tooltip": true,
     "tooltip-format": "Disk Usage: {free} / {total} ({percentage_free}%)"
-  },
-  "battery#power": {
-    "format": "󰢝 {power:0.2f}w",
-    "interval": 5
   },
   /* Right Modules */
   "tray": {
@@ -137,10 +132,16 @@
       "warning": 30,
       "critical": 20
     },
+    "interval": 5,
     "format": "{icon} {capacity}%",
     "format-charging": "󰂄 {capacity}%",
     "format-plugged": "󰂄 {capacity}%",
-    "format-alt": "{time} {icon}",
-    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁾"]
+    "format-alt": "󰢝 {power:0.2f}W",
+    "format-charging-alt": "󰂄 {power:0.2f}W",
+    "format-plugged-alt": "󰂄 {power:0.2f}W",
+    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁾"],
+    "actions": {
+      "on-click": "mode"
+    }
   }
 }

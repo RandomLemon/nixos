@@ -34,7 +34,7 @@
   networking.networkmanager.plugins = lib.mkForce [ ];
 
   # Default: x1e-nixos-config 6.19 kernel via hardware.lenovo-yoga-slim7x.enable.
-  # Boot entry "ubuntu-concept" uses the Ubuntu Concept 7.1rc qcom-x1e kernel instead.
+  # Boot entry "ubuntu-concept" uses the Ubuntu Concept 7.1.y qcom-x1e kernel instead.
   specialisation = {
     ubuntu-concept.configuration = {
       system.nixos.tags = [ "ubuntu-concept" ];
