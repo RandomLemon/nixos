@@ -1,0 +1,17 @@
+output "Samsung Display Corp. 0x4189 Unknown" {
+	mode 2944x1840@89.999
+	scale 1.75
+	position 0,0
+	alias $INTERNAL
+}
+
+profile laptop {
+	output $INTERNAL enable
+}
+
+# Matches when an external monitor is connected alongside the laptop panel.
+# Update the output name with `niri msg outputs` or `wlr-randr`.
+profile docked {
+	output $INTERNAL enable
+	output "HDMI-A-1" enable position 0,0
+}
