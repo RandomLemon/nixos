@@ -66,9 +66,9 @@
     "tooltip-format": " RAM: {used:0.2f}G / {total:0.2f}G\nSwap: {swapUsed:0.2f}G / {swapTotal:0.2f}G"
   },
   "disk": {
-    "format": "󰋊 {percentage_free}%",
+    "format": "󰋊 {percentage_used}%",
     "tooltip": true,
-    "tooltip-format": "Disk Usage: {free} / {total} ({percentage_free}%)"
+    "tooltip-format": "Disk Usage: {used} / {total} ({percentage_used}%)"
   },
   /* Right Modules */
   "tray": {
