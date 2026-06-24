@@ -19,6 +19,9 @@
       "language_servers": ["nixd", "nil"]
     }
   },
+  "project_panel": {
+    "dock": "left"
+  },
   "auto_install_extensions": {
     "nix": true
   },
