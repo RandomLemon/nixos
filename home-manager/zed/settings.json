@@ -25,7 +25,8 @@
   "agent_servers": {
     "OpenCode": {
       "command": "opencode",
-      "args": ["acp"]
+      "args": ["acp"],
+      "type": "custom"
     }
   }
 }
