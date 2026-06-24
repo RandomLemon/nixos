@@ -13,11 +13,13 @@
     ];
 
     userSettings = {
-      load_direnv = true;
+      load_direnv = "shell_hook";
       base_keymap = "VSCode";
 
       theme = {
         mode = "system";
+        dark = "Ayu Dark";
+        light = "Ayu Light";
       };
 
       terminal = {
@@ -29,7 +31,7 @@
         };
       };
 
-      lsp = {
+      languages = {
         Nix = {
           language_servers = [ "nixd" "nil" ];
         };
