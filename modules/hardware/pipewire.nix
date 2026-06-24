@@ -10,6 +10,8 @@
     alsa.support32Bit = true;
   };
   environment.systemPackages = with pkgs; [
+    alsa-ucm-conf
+    alsa-utils
     pwvucontrol
   ];
 }

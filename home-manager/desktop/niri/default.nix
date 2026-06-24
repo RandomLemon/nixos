@@ -2,6 +2,7 @@
 {
     imports = [
         ../alacritty
+        ../kanshi
         ../mako
         ../wallpaper
         ../swaylock

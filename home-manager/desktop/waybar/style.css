@@ -36,7 +36,6 @@ tooltip {
 #backlight,
 #tray,
 #mode,
-#battery.power,
 #battery,
 #window {
   margin: 4px 0;
@@ -58,9 +57,9 @@ tooltip {
 
 /* right */
 #clock,
-#battery.power,
 #battery,
 #tray,
+#disk,
 #window {
   margin-right: 4px;
   border-top-right-radius: 10px;

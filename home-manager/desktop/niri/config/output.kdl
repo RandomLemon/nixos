@@ -1,3 +1,4 @@
+// Output layout is managed by kanshi (see home-manager/desktop/kanshi/).
 // You can configure outputs by their name, which you can find
 // by running `niri msg outputs` while inside a niri instance.
 // The built-in laptop monitor is usually called "eDP-1".

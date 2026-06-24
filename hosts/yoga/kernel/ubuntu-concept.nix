@@ -1,5 +1,5 @@
-# Ubuntu Concept linux-qcom-x1e 7.1rc kernel (jg/ubuntu-qcom-x1e-7.1rc branch).
-# Source: https://github.com/jglathe/linux_ms_dev_kit/tree/jg/ubuntu-qcom-x1e-7.1rc
+# Ubuntu Concept linux-qcom-x1e 7.1.y kernel (jg/ubuntu-qcom-x1e-7.1.y branch).
+# Source: https://github.com/jglathe/linux_ms_dev_kit/tree/jg/ubuntu-qcom-x1e-7.1.y
 {
   lib,
   fetchgit,
@@ -16,13 +16,13 @@ let
       args
       // rec {
         pname = "linux";
-        version = "7.1.0-rc6";
-        modDirVersion = "7.1.0-rc6";
+        version = "7.1.0";
+        modDirVersion = "7.1.0";
 
         src = fetchgit {
           url = "https://github.com/jglathe/linux_ms_dev_kit.git";
-          rev = "ed172acddb4f371e0bb79088619f007a67d196e7"; # jg/ubuntu-qcom-x1e-7.1rc
-          hash = "sha256-FsmDBYYK80DTukzA0gr7iMaBE/nkDFUPgpx0rW5dDg8=";
+          rev = "e02dadecc8238d6dd9c120ac81a847d35ad71810"; # jg/ubuntu-qcom-x1e-7.1.y
+          hash = "sha256-hfhCMGAul62VVk5viF6UlFvzyjBZCy7jROB7pYjnP+Y=";
         };
 
         # Matches debian.qcom-x1e/rules.d/arm64.mk (defconfig = defconfig).
