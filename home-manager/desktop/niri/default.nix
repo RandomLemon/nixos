@@ -1,7 +1,7 @@
 { pkgs, config, ... }:
 {
     imports = [
-        ../alacritty
+        ../../alacritty
         ../kanshi
         ../mako
         ../wallpaper

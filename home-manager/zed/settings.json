@@ -1,0 +1,25 @@
+{
+  "load_direnv": "shell_hook",
+  "base_keymap": "VSCode",
+  "theme": {
+    "mode": "system",
+    "dark": "Ayu Dark",
+    "light": "Ayu Light"
+  },
+  "terminal": {
+    "shell": {
+      "program": "zsh"
+    },
+    "env": {
+      "TERM": "alacritty"
+    }
+  },
+  "languages": {
+    "Nix": {
+      "language_servers": ["nixd", "nil"]
+    }
+  },
+  "auto_install_extensions": {
+    "nix": true
+  }
+}
