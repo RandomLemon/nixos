@@ -21,5 +21,11 @@
   },
   "auto_install_extensions": {
     "nix": true
+  },
+  "agent_servers": {
+    "OpenCode": {
+      "command": "opencode",
+      "args": ["acp"]
+    }
   }
 }
