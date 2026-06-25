@@ -46,6 +46,7 @@ let
     yaml-language-server
     vscode-json-languageserver
     rust-analyzer
+    gopls
   ];
 in
 {

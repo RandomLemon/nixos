@@ -1,5 +1,5 @@
 {
-  "load_direnv": "shell_hook",
+  "load_direnv": "direct",
   "base_keymap": "VSCode",
   "theme": {
     "mode": "system",
@@ -18,22 +18,25 @@
     "Nix": {
       "language_servers": ["nixd"],
     },
-    "Go": {
-      "language_servers": ["gopls"],
-    },
-    "Rust": {
-      "language_servers": ["rust-analyzer"],
+  },
+  "lsp": {
+    "nixd": {
+      "initialization_options": {
+        "formatting": {
+          "command": ["nixfmt"],
+        },
+      },
     },
   },
   "project_panel": {
     "dock": "left",
   },
-  "agent": {
-    "dock": "right",
-  },
   "auto_install_extensions": {
     "nix": true,
     "vue": true,
+  },
+  "agent": {
+    "dock": "right",
   },
   "agent_servers": {
     "OpenCode": {

@@ -8,6 +8,7 @@
       nixd
       nixfmt
       opencode
+      gopls
     ];
   };
 
