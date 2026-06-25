@@ -4,32 +4,42 @@
   "theme": {
     "mode": "system",
     "dark": "Ayu Dark",
-    "light": "Ayu Light"
+    "light": "Ayu Light",
   },
   "terminal": {
     "shell": {
-      "program": "zsh"
+      "program": "zsh",
     },
     "env": {
-      "TERM": "alacritty"
-    }
+      "TERM": "alacritty",
+    },
   },
   "languages": {
     "Nix": {
-      "language_servers": ["nixd", "nil"]
-    }
+      "language_servers": ["nixd"],
+    },
+    "Go": {
+      "language_servers": ["gopls"],
+    },
+    "Rust": {
+      "language_servers": ["rust-analyzer"],
+    },
   },
   "project_panel": {
-    "dock": "left"
+    "dock": "left",
+  },
+  "agent": {
+    "dock": "right",
   },
   "auto_install_extensions": {
-    "nix": true
+    "nix": true,
+    "vue": true,
   },
   "agent_servers": {
     "OpenCode": {
       "command": "opencode",
       "args": ["acp"],
-      "type": "custom"
-    }
-  }
+      "type": "custom",
+    },
+  },
 }

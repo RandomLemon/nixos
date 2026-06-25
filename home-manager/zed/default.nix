@@ -6,7 +6,6 @@
 
     extraPackages = with pkgs; [
       nixd
-      nil
       nixfmt
       opencode
     ];
