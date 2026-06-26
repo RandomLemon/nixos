@@ -14,6 +14,19 @@
 
     settings = {
       autoupdate = false;
+      model = "opencode-go/deepseek-v4-flash";
+      provider = {
+        opencode-go = {
+          models = {
+            "deepseek-v4-flash" = {
+              options = {
+                reasoningEffort = "high";
+                reasoningSummary = "auto";
+              };
+            };
+          };
+        };
+      };
     };
 
     tui = {
