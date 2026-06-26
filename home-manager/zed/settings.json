@@ -34,6 +34,7 @@
   "auto_install_extensions": {
     "nix": true,
     "vue": true,
+    "git-firefly": true,
   },
   "agent": {
     "dock": "right",
