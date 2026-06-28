@@ -46,4 +46,8 @@
       "type": "custom",
     },
   },
+
+  "edit_predictions": {
+    "provider": "none",
+  },
 }
