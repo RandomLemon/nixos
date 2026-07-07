@@ -26,6 +26,7 @@ local servers = {
   jsonls = {},
   yamlls = {},
   rust_analyzer = {},
+  gopls = {},
 }
 
 for name, config in pairs(servers) do

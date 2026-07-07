@@ -1,9 +1,9 @@
+require("luasnip.loaders.from_vscode").lazy_load()
+
 local cmp = require("cmp")
 local luasnip = require("luasnip")
 
-require("luasnip.loaders.from_vscode").lazy_load()
-
-return {
+cmp.setup({
   snippet = {
     expand = function(args)
       luasnip.lsp_expand(args.body)
@@ -45,4 +45,9 @@ return {
       ellipsis_char = "...",
     }),
   },
-}
+})
+
+-- nvim-autopairs integration
+require("nvim-autopairs").setup()
+local cmp_autopairs = require("nvim-autopairs.completion.cmp")
+cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
