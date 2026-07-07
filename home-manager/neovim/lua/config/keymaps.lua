@@ -28,3 +28,18 @@ map("<leader>fh", "<cmd>Telescope help_tags<cr>", "Help")
 map("[d", vim.diagnostic.goto_prev, "Previous diagnostic")
 map("]d", vim.diagnostic.goto_next, "Next diagnostic")
 map("<leader>e", vim.diagnostic.open_float, "Line diagnostic")
+
+-- OpenCode
+map("<leader>oa", function() require("opencode").ask("@this: ") end, "Ask OpenCode", { "n", "x" })
+map("<leader>os", function() require("opencode").select() end, "Select OpenCode", { "n", "x" })
+
+vim.keymap.set({ "n", "x" }, "go", function()
+  return require("opencode").operator("@this ")
+end, { desc = "Append range to OpenCode", silent = true, expr = true })
+
+vim.keymap.set("n", "goo", function()
+  return require("opencode").operator("@this ") .. "_"
+end, { desc = "Append line to OpenCode", silent = true, expr = true })
+
+map("<S-C-u>", function() require("opencode").command("session.half.page.up") end, "Scroll OpenCode up")
+map("<S-C-d>", function() require("opencode").command("session.half.page.down") end, "Scroll OpenCode down")

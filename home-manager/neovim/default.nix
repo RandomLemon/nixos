@@ -34,6 +34,7 @@ let
     lspkind-nvim
     nvim-cmp
     nvim-autopairs
+    opencode-nvim
   ];
 
   lspTools = with pkgs; [
