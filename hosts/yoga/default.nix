@@ -68,10 +68,10 @@ in
   # Default: Ubuntu Concept 7.1.y qcom-x1e kernel.
   # Boot entry "x1e-nixos-config" uses the x1e-nixos-config 6.19 kernel instead.
   boot.kernelPackages = lib.mkForce (pkgs.callPackage ./kernel/ubuntu-concept.nix { });
-  # specialisation = {
-  #   x1e-nixos-config.configuration = {
-  #     system.nixos.tags = [ "x1e-nixos-config" ];
-  #     boot.kernelPackages = lib.mkForce pkgs.x1e80100-linux;
-  #   };
-  # };
+  specialisation = {
+    x1e-nixos-config.configuration = {
+      system.nixos.tags = [ "x1e-nixos-config" ];
+      boot.kernelPackages = lib.mkForce pkgs.linuxPackages_testing;
+    };
+  };
 }
