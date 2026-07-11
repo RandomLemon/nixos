@@ -1,12 +1,16 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
-  imports = 
-    [
-      ./asus.nix
-      ./nvidia.nix
-    ];
-    
+  imports = [
+    ./asus.nix
+    ./nvidia.nix
+  ];
+
   networking.hostName = lib.mkForce "tx";
 
   # Kernel
@@ -16,8 +20,8 @@
   boot = {
     blacklistedKernelModules = [ "nouveau" ];
     kernelParams = lib.mkDefault [
-      ''pcie_aspm.policy=powersupersave''
-      ''acpi_osi="Windows 2022"''
+      "pcie_aspm.policy=powersupersave"
+      # ''acpi_osi="Windows 2022"''
     ];
   };
   powerManagement.enable = true;
@@ -33,9 +37,9 @@
       scaling_max_freq = "3800000"; # Max freq 3.8GHz
       turbo = "auto";
       # Battery charging
-      enable_thresholds = "true"; 
-      start_threshold = "50";
-      stop_threshold = "60";
+      # enable_thresholds = "true";
+      # start_threshold = "50";
+      # stop_threshold = "60";
     };
     charger = {
       governor = "powersave";
@@ -61,7 +65,7 @@
   specialisation = {
     nvidia-vfio.configuration = {
       system.nixos.tags = [ "nvidia-vfio" ];
-      
+
       # boot.kernelPackages = let
       #   linux_moneta_pkg = { fetchurl, buildLinux, ... } @ args:
 
@@ -91,10 +95,10 @@
       #       extraMeta.branch = "6.18";
       #     } // (args.argsOverride or {}));
       #   linux_moneta = pkgs.callPackage linux_moneta_pkg{};
-      # in 
+      # in
       #   pkgs.lib.recurseIntoAttrs (pkgs.linuxPackagesFor linux_moneta);
 
-      boot.initrd.kernelModules = [ 
+      boot.initrd.kernelModules = [
         "vfio_pci"
         "vfio"
         "vfio_iommu_type1"
