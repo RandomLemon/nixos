@@ -41,12 +41,9 @@ in
 
   nixpkgs.hostPlatform.system = "aarch64-linux";
 
-  hardware.lenovo-yoga-slim7x.enable = true;
-
   # Card long name does not match x1e80100.conf DMI regex ("Yoga Slim 7" vs
   # product_family "YOGA Air 14s Q8X9"). Merge override into the full UCM2 tree.
   environment.etc."alsa/ucm2".source = lib.mkForce "${alsaUcm2}/share/alsa/ucm2";
-
   # NixOS alsa-lib does not pick up /etc/alsa/ucm2 on its own; PipeWire ACP
   # needs this to load the Yoga profile instead of falling back to null sink.
   environment.sessionVariables.ALSA_CONFIG_UCM2 = "/etc/alsa/ucm2";
@@ -54,7 +51,7 @@ in
   systemd.user.services.pipewire-pulse.environment.ALSA_CONFIG_UCM2 = "/etc/alsa/ucm2";
   systemd.user.services.wireplumber.environment.ALSA_CONFIG_UCM2 = "/etc/alsa/ucm2";
 
-  boot.loader.systemd-boot.configurationLimit = 4;
+  boot.loader.systemd-boot.configurationLimit = 8;
 
   boot.initrd.systemd = {
     enable = true;
@@ -67,11 +64,14 @@ in
 
   # Default: Ubuntu Concept 7.1.y qcom-x1e kernel.
   # Boot entry "x1e-nixos-config" uses the x1e-nixos-config 6.19 kernel instead.
+  hardware.lenovo-yoga-slim7x.enable = lib.mkDefault true;
   boot.kernelPackages = lib.mkForce (pkgs.callPackage ./kernel/ubuntu-concept.nix { });
-  specialisation = {
-    x1e-nixos-config.configuration = {
-      system.nixos.tags = [ "x1e-nixos-config" ];
-      boot.kernelPackages = lib.mkForce pkgs.linuxPackages_testing;
-    };
-  };
+
+  # specialisation = {
+  #   mainline-kernel.configuration = {
+  #     system.nixos.tags = [ "mainline-kernel" ];
+  #     hardware.lenovo-yoga-slim7x.enable = true;
+  #     boot.kernelPackages = lib.mkForce pkgs.linuxPackages_testing;
+  #   };
+  # };
 }

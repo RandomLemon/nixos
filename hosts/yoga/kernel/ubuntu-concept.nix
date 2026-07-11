@@ -16,12 +16,12 @@ let
       args
       // rec {
         pname = "linux";
-        version = "7.1.1";
-        modDirVersion = "7.1.1";
+        version = "7.1.2";
+        modDirVersion = "7.1.2";
 
         src = fetchzip {
-          url = "https://github.com/jglathe/linux_ms_dev_kit/archive/refs/tags/jg/ubuntu-qcom-x1e-7.1.1-jg-1.zip";
-          hash = "sha256-y65pGyqniFq/7JAPLqHp9C12htI3jy9HOJOGX0+DG4c=";
+          url = "https://github.com/jglathe/linux_ms_dev_kit/archive/refs/tags/jg/ubuntu-qcom-x1e-7.1.2-jg-1.tar.gz";
+          hash = "sha256-nxNGVVfitUoFFtutu/MQlrygE0U99l06Rj9/qWOeflY=";
         };
 
         # Matches debian.qcom-x1e/rules.d/arm64.mk (defconfig = defconfig).
@@ -35,6 +35,10 @@ let
           MAGIC_SYSRQ = yes;
           EC_LENOVO_YOGA_SLIM7X = module;
 
+          # Waydroid
+          ANDROID_BINDER_IPC = yes;
+          ANDROID_BINDERFS = yes;
+
           # Required by Ubuntu qcom-x1e annotations; missing from plain defconfig
           # and causes AppArmor secmark code in security/apparmor/lsm.c to fail.
           NETWORK_SECMARK = yes;
@@ -43,6 +47,19 @@ let
 
           # Not used on Snapdragon X Elite; skip to save compile time.
           DRM_AMDGPU = no;
+
+          # Performance
+          NUMA = yes;
+          NUMA_BALANCING_DEFAULT_ENABLED = yes;
+          NR_CPUS = yes;
+          HZ_1000 = yes;
+          NO_HZ_FULL = yes;
+          PREEMPT_DYNAMIC = yes;
+          RCU_LAZY = yes;
+          RCU_NOCB_CPU = yes;
+          LRU_GEN = yes;
+          LRU_GEN_ENABLED = yes;
+          CRASH_DUMP = yes;
 
           # Trim unrelated platforms to reduce build time (from x1e-nixos-config).
           ACPI = no;
