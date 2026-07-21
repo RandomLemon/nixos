@@ -1,4 +1,9 @@
-{ pkgs, lib, username, ... }:
+{
+  pkgs,
+  lib,
+  username,
+  ...
+}:
 {
   home.packages = with pkgs; [
     firefox-esr
@@ -10,6 +15,9 @@
     v2raya
     libreoffice-qt6-fresh
     vlc
+    localsend
+
+    file-roller
     # wechat
     # (pkgs.callPackage ../modules/software/3rd/easierconnect/easierconnect.nix { })
   ];
@@ -24,7 +32,10 @@
       "x-scheme-handler/file" = "org.kde.dolphin.desktop";
       "application/zip" = "org.kde.ark.desktop";
 
-      "text/plain" = ["org.kde.kate.desktop" "code.desktop"];
+      "text/plain" = [
+        "org.kde.kate.desktop"
+        "code.desktop"
+      ];
       "image/x-mng" = "org.kde.gwenview.desktop";
       "application/pdf" = "firefox-esr.desktop";
 
