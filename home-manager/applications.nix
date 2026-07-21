@@ -17,7 +17,6 @@
     vlc
     localsend
 
-    file-roller
     # wechat
     # (pkgs.callPackage ../modules/software/3rd/easierconnect/easierconnect.nix { })
   ];
