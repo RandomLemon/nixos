@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 {
   # Wayland Desktop Environment Configuations.
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
@@ -22,10 +27,11 @@
 
   security.polkit.enable = true; # polkit
   services.gnome.gnome-keyring.enable = true; # secret service
-  security.pam.services.swaylock = {};
+  security.pam.services.swaylock = { };
 
-  environment.systemPackages = [ 
-    pkgs.nautilus 
+  environment.systemPackages = [
+    pkgs.nautilus
+    pkgs.file-roller
   ];
   services.gvfs.enable = true;
 }

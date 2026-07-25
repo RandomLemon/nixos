@@ -1,10 +1,15 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   # Network
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  networking.networkmanager.enable = lib.mkDefault true;  # Easiest to use and most distros use this by default.
+  networking.networkmanager.enable = lib.mkDefault true; # Easiest to use and most distros use this by default.
   networking.networkmanager.wifi.powersave = lib.mkDefault true;
 
   # Set your time zone.
@@ -19,4 +24,10 @@
 
   # Network
   networking.hostName = lib.mkDefault "nix16"; # Define your hostname.
+
+  networking.firewall = {
+    # localsend
+    allowedTCPPorts = [ 53317 ];
+    allowedUDPPorts = [ 53317 ];
+  };
 }
