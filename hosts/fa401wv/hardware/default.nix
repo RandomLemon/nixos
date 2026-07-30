@@ -9,6 +9,7 @@
   imports = [
     ./asus.nix
     ./nvidia.nix
+    ./tlp.nix
   ];
 
   networking.hostName = lib.mkForce "tx";
@@ -28,44 +29,19 @@
   # powerManagement.powertop.enable = true;
   # services.auto-epp.enable = true;
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
-  services.auto-cpufreq.enable = true;
-  services.auto-cpufreq.settings = {
-    battery = {
-      governor = "powersave";
-      energy_performance_preference = "power";
-      platform_profile = "low-power";
-      scaling_max_freq = "3800000"; # Max freq 3.8GHz
-      turbo = "auto";
-      # Battery charging
-      # enable_thresholds = "true";
-      # start_threshold = "50";
-      # stop_threshold = "60";
-    };
-    charger = {
-      governor = "powersave";
-      energy_performance_preference = "balance_performance";
-      platform_profile = "balanced";
-      turbo = "auto";
-    };
-  };
 
   # SSD
   services.fstrim.enable = lib.mkDefault true;
 
-  # ACPI S3 Fix for FA401WV BIOS Version 319
-  # Not Succeeded Yet...
-  # boot.initrd.prepend = [
-  #   "${(pkgs.callPackage ./custom-dsdt.nix {})}/dsdt.cpio"
-  # ];
-
   # IIO Sensors
   hardware.sensor.iio.enable = lib.mkDefault true;
 
-  # TMP Config for Moneta GPU fuzzing test
+  # TMP Config for GPU fuzzing test
   specialisation = {
     nvidia-vfio.configuration = {
       system.nixos.tags = [ "nvidia-vfio" ];
 
+      ### Moneta Patch
       # boot.kernelPackages = let
       #   linux_moneta_pkg = { fetchurl, buildLinux, ... } @ args:
 
