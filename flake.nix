@@ -24,11 +24,9 @@
   outputs = {
     self,
     nixpkgs,
-    # nixpkgs-stable,
     home-manager,
-    # chaotic,
     nix-alien,
-    nix-cachyos-kernel,
+    # nix-cachyos-kernel,
     x1e-nixos-config,
     ...
   }@inputs:
