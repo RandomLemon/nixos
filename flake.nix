@@ -12,13 +12,11 @@
   };
 
   inputs = {
-    # nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-25.11";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    # home-manager.url = "github:nix-community/home-manager/release-25.11";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     nix-alien.url = "github:thiagokokada/nix-alien";
-    nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release"; # for cachyos kernel
+    # nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release"; # for cachyos kernel
     x1e-nixos-config.url = "github:kuruczgy/x1e-nixos-config";
     x1e-nixos-config.inputs.nixpkgs.follows = "nixpkgs";
   };
@@ -73,15 +71,7 @@
         homeModule = ./hosts/fa401wv/home.nix;
         extraSpecialArgs = {
           alien-pkgs = nix-alien.packages.x86_64-linux;
-          # pkgs-stable = nixpkgs-stable.legacyPackages.x86_64-linux;
         };
-        # extraModules = [
-        #   # chaotic.nixosModules.default # for cachyos kernel
-        #   ({ pkgs, ... }: {
-        #     nixpkgs.overlays = [ nix-cachyos-kernel.overlays.pinned ];
-        #     boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest-lto-zen4;
-        #   })
-        # ];
       };
 
       thinkpad = mkHost {
