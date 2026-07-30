@@ -324,7 +324,7 @@ To use this repository as a template for a new machine:
    my-machine = mkHost {
      system = "x86_64-linux";
      hostModule = ./hosts/my-machine;
-     homeModule = ./hosts/my-machine/home.nix;
+     homeModules = [ ./hosts/my-machine/home.nix ];
    };
    ```
 

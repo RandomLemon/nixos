@@ -36,7 +36,7 @@
     mkHost = {
       system,
       hostModule,
-      homeModule ? null,
+      homeModules ? [],
       extraSpecialArgs ? {},
       extraModules ? [],
     }:
@@ -49,14 +49,14 @@
         { nix.settings.trusted-users = [ username ]; }
         hostModule
       ]
-      ++ (if homeModule != null then [
+      ++ (if homeModules != [] then [
         home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.backupFileExtension = "hm.bak";
           home-manager.extraSpecialArgs = inputs // specialArgs;
-          home-manager.users.${username} = import homeModule;
+          home-manager.users.${username} = { imports = homeModules; };
         }
       ] else [])
       ++ extraModules;
@@ -66,7 +66,7 @@
       tx = mkHost {
         system = "x86_64-linux";
         hostModule = ./hosts/fa401wv;
-        homeModule = ./hosts/fa401wv/home.nix;
+        homeModules = [ ./hm-profile/niri-desktop.nix ];
         extraSpecialArgs = {
           alien-pkgs = nix-alien.packages.x86_64-linux;
         };
@@ -75,7 +75,7 @@
       thinkpad = mkHost {
         system = "x86_64-linux";
         hostModule = ./hosts/thinkpad;
-        homeModule = ./hosts/thinkpad/home.nix;
+        homeModules = [ ./hm-profile/niri-desktop.nix ./hosts/thinkpad/home.nix ];
       };
 
       msr1 = mkHost {
@@ -86,7 +86,7 @@
       yoga = mkHost {
         system = "aarch64-linux";
         hostModule = ./hosts/yoga;
-        homeModule = ./hosts/fa401wv/home.nix;
+        homeModules = [ ./hm-profile/niri-desktop.nix ];
         extraModules = [
           x1e-nixos-config.nixosModules.x1e
         ];
