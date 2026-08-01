@@ -17,7 +17,8 @@
     vlc
     localsend
 
-    # wechat
+    wechat
+    wemeet
     # (pkgs.callPackage ../modules/software/3rd/easierconnect/easierconnect.nix { })
   ];
 
