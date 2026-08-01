@@ -1,6 +1,8 @@
 { pkgs, alien-pkgs, ... }:
 {
   imports = [
+    ./hardware-configuration.nix
+
     ../../modules/hardware
 
     ../../modules/software/system/main.nix
