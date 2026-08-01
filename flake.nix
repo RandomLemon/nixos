@@ -72,6 +72,15 @@
         };
       };
 
+      itx = mkHost {
+        system = "x86_64-linux";
+        hostModule = ./hosts/itx;
+        homeModules = [ ./hm-profile/niri-desktop.nix ];
+        extraSpecialArgs = {
+          alien-pkgs = nix-alien.packages.x86_64-linux;
+        };
+      };
+
       thinkpad = mkHost {
         system = "x86_64-linux";
         hostModule = ./hosts/thinkpad;
