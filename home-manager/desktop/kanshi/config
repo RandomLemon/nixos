@@ -2,16 +2,29 @@ output "Samsung Display Corp. 0x4189 Unknown" {
 	mode 2944x1840@89.999
 	scale 1.75
 	position 0,0
-	alias $INTERNAL
+	alias $YOGAAIR14S
 }
 
-profile laptop {
-	output $INTERNAL enable
+output "Shenzhen KTC Technology Group H24T7 0x00000001" {
+    mode 2560x1440@180.000
+    scale 1.25
+    position 0,0
+    alias $H24T7
 }
 
+# ===
 # Matches when an external monitor is connected alongside the laptop panel.
 # Update the output name with `niri msg outputs` or `wlr-randr`.
-profile docked {
-	output $INTERNAL enable
-	output "HDMI-A-1" enable position 0,0
+
+profile laptop_1 {
+	output $YOGAAIR14S enable
+}
+
+profile docked_1 {
+	output $YOGAAIR14S enable
+	output $H24T7 enable
+}
+
+profile desktop_1 {
+    output $H24T7 enable
 }
