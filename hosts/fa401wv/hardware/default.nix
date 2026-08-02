@@ -12,8 +12,6 @@
     ./tlp.nix
   ];
 
-  networking.hostName = lib.mkForce "tx";
-
   # Kernel
   # boot.kernelPackages = lib.mkDefault pkgs.linuxPackages_cachyos;
 

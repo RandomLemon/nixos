@@ -17,6 +17,8 @@
     ../../modules/software/desktop/niri.nix
   ];
 
+  networking.hostName = "itx";
+
   # nix-ld
   programs.nix-ld.enable = true;
 
