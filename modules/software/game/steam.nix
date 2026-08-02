@@ -22,6 +22,7 @@
         keyutils
         # Add other libraries as needed
       ];
+    };
   };
 
   programs = {
