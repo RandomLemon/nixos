@@ -30,7 +30,7 @@ in
     ../../modules/software/develop/direnv.nix
     ../../modules/software/develop/distrobox.nix
 
-    ../../modules/software/develop/android-studio.nix
+    # ../../modules/software/develop/android-studio.nix
 
     ../../modules/software/desktop/greetd.nix
     ../../modules/software/desktop/niri.nix
@@ -67,7 +67,7 @@ in
   # Default: Ubuntu Concept 7.1.y qcom-x1e kernel.
   # Boot entry "x1e-nixos-config" uses the x1e-nixos-config 6.19 kernel instead.
   hardware.lenovo-yoga-slim7x.enable = lib.mkDefault true;
-  boot.kernelPackages = lib.mkForce (pkgs.callPackage ./kernel/ubuntu-concept.nix { });
+  # boot.kernelPackages = lib.mkForce (pkgs.callPackage ./kernel/ubuntu-concept.nix { });
 
   # specialisation = {
   #   mainline-kernel.configuration = {
