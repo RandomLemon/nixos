@@ -68,6 +68,7 @@ in
   # Boot entry "x1e-nixos-config" uses the x1e-nixos-config 6.19 kernel instead.
   hardware.lenovo-yoga-slim7x.enable = lib.mkDefault true;
   # boot.kernelPackages = lib.mkForce (pkgs.callPackage ./kernel/ubuntu-concept.nix { });
+  boot.kernelPackages = lib.mkForce pkgs.linuxPackages_latest;
 
   # specialisation = {
   #   mainline-kernel.configuration = {
