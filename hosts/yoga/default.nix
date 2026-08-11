@@ -30,6 +30,8 @@ in
     ../../modules/software/develop/direnv.nix
     ../../modules/software/develop/distrobox.nix
 
+    ../../modules/software/develop/android-studio.nix
+
     ../../modules/software/desktop/greetd.nix
     ../../modules/software/desktop/niri.nix
 
