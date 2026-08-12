@@ -5,9 +5,8 @@
   nixpkgs.config.android_sdk.accept_license = true;
 
   # 2. 把 Android Studio 加入系统包
-  environment.systemPackages = [
-    # pkgs.android-studio      # IDE 本体，自带 FHS 环境
-    pkgs.android-studio-full  # 额外预置 SDK platforms 28-34、模拟器、系统镜像、NDK
+  environment.systemPackages = with pkgs; [
+    android-studio
   ];
 
   # 3. 让当前用户能用 KVM 跑模拟器
