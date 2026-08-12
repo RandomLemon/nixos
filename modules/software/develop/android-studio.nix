@@ -14,5 +14,5 @@
   users.users.${username}.extraGroups = [ "kvm" ];
 
   # 4. （可选）adb/fastboot 的 udev 规则，接真机调试用
-  services.udev.packages = [ pkgs.android-udev-rules ];
+  # services.udev.packages = [ pkgs.android-udev-rules ];
 }
