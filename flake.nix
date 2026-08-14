@@ -16,6 +16,8 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     nix-alien.url = "github:thiagokokada/nix-alien";
+    omp-nix.url = "github:yuxqiu/omp-nix";
+    omp-nix.inputs.nixpkgs.follows = "nixpkgs";
     # nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release"; # for cachyos kernel
     x1e-nixos-config.url = "github:kuruczgy/x1e-nixos-config";
     x1e-nixos-config.inputs.nixpkgs.follows = "nixpkgs";
@@ -26,6 +28,7 @@
     nixpkgs,
     home-manager,
     nix-alien,
+    omp-nix,
     # nix-cachyos-kernel,
     x1e-nixos-config,
     ...
@@ -69,6 +72,7 @@
         homeModules = [ ./hm-profile/niri-desktop.nix ];
         extraSpecialArgs = {
           alien-pkgs = nix-alien.packages.x86_64-linux;
+          omp-pkgs = omp-nix.packages.x86_64-linux;
         };
       };
 
