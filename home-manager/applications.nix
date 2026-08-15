@@ -22,6 +22,17 @@
     # (pkgs.callPackage ../modules/software/3rd/easierconnect/easierconnect.nix { })
   ];
 
+  # Fix QQ under wayland
+  xdg.desktopEntries.qq = {
+    name = "QQ";
+    genericName = "Instant Messaging";
+    exec = "${pkgs.qq}/bin/qq --ozone-platform=wayland --enable-features=UseOzonePlatform --enable-features=WaylandWindowDecorations --enable-wayland-ime=true --wayland-text-input-version=3 %U";
+    terminal = false;
+    categories = [ "Network" "InstantMessaging" ];
+    icon = "qq";
+    comment = "QQ for Linux";
+  };
+
   # Default Applications
   xdg.mimeApps = {
     enable = true;
