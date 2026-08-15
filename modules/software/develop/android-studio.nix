@@ -1,4 +1,9 @@
-{ config, pkgs, username, ... }:
+{
+  config,
+  pkgs,
+  username,
+  ...
+}:
 
 {
   # 1. 同意 Android SDK 许可，否则 nixos-rebuild 会直接失败

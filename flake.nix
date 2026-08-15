@@ -23,87 +23,108 @@
     x1e-nixos-config.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = {
-    self,
-    nixpkgs,
-    home-manager,
-    nix-alien,
-    omp-nix,
-    # nix-cachyos-kernel,
-    x1e-nixos-config,
-    ...
-  }@inputs:
-  let
-    username = "int16";
-
-    mkHost = {
-      system,
-      hostModule,
-      homeModules ? [],
-      extraSpecialArgs ? {},
-      extraModules ? [],
-    }:
+  outputs =
+    {
+      self,
+      nixpkgs,
+      home-manager,
+      nix-alien,
+      omp-nix,
+      # nix-cachyos-kernel,
+      x1e-nixos-config,
+      ...
+    }@inputs:
     let
-      specialArgs = { inherit self username system inputs; } // extraSpecialArgs;
-    in
-    nixpkgs.lib.nixosSystem {
-      inherit specialArgs;
-      modules = [
-        { nix.settings.trusted-users = [ username ]; }
-        hostModule
-      ]
-      ++ (if homeModules != [] then [
-        home-manager.nixosModules.home-manager
+      username = "int16";
+
+      mkHost =
         {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.backupFileExtension = "hm.bak";
-          home-manager.extraSpecialArgs = inputs // specialArgs;
-          home-manager.users.${username} = { imports = homeModules; };
-        }
-      ] else [])
-      ++ extraModules;
-    };
-  in {
-    nixosConfigurations = {
-      tx = mkHost {
-        system = "x86_64-linux";
-        hostModule = ./hosts/fa401wv;
-        homeModules = [ ./hm-profile/niri-desktop.nix ];
-        extraSpecialArgs = {
-          alien-pkgs = nix-alien.packages.x86_64-linux;
-          omp-pkgs = omp-nix.packages.x86_64-linux;
+          system,
+          hostModule,
+          homeModules ? [ ],
+          extraSpecialArgs ? { },
+          extraModules ? [ ],
+        }:
+        let
+          specialArgs = {
+            inherit
+              self
+              username
+              system
+              inputs
+              ;
+          }
+          // extraSpecialArgs;
+        in
+        nixpkgs.lib.nixosSystem {
+          inherit specialArgs;
+          modules = [
+            { nix.settings.trusted-users = [ username ]; }
+            hostModule
+          ]
+          ++ (
+            if homeModules != [ ] then
+              [
+                home-manager.nixosModules.home-manager
+                {
+                  home-manager.useGlobalPkgs = true;
+                  home-manager.useUserPackages = true;
+                  home-manager.backupFileExtension = "hm.bak";
+                  home-manager.extraSpecialArgs = inputs // specialArgs;
+                  home-manager.users.${username} = {
+                    imports = homeModules;
+                  };
+                }
+              ]
+            else
+              [ ]
+          )
+          ++ extraModules;
+        };
+    in
+    {
+      nixosConfigurations = {
+        tx = mkHost {
+          system = "x86_64-linux";
+          hostModule = ./hosts/fa401wv;
+          homeModules = [ ./hm-profile/niri-desktop.nix ];
+          extraSpecialArgs = {
+            alien-pkgs = nix-alien.packages.x86_64-linux;
+            omp-pkgs = omp-nix.packages.x86_64-linux;
+          };
+        };
+
+        itx = mkHost {
+          system = "x86_64-linux";
+          hostModule = ./hosts/itx;
+          homeModules = [ ./hm-profile/niri-desktop.nix ];
+          extraSpecialArgs = {
+            alien-pkgs = nix-alien.packages.x86_64-linux;
+          };
+        };
+
+        thinkpad = mkHost {
+          system = "x86_64-linux";
+          hostModule = ./hosts/thinkpad;
+          homeModules = [
+            ./hm-profile/niri-desktop.nix
+            ./hosts/thinkpad/home.nix
+          ];
+        };
+
+        msr1 = mkHost {
+          system = "aarch64-linux";
+          hostModule = ./hosts/msr1;
+        };
+
+        yoga = mkHost {
+          system = "aarch64-linux";
+          hostModule = ./hosts/yoga;
+          homeModules = [ ./hm-profile/niri-desktop.nix ];
+          extraModules = [
+            x1e-nixos-config.nixosModules.x1e
+          ];
         };
       };
-
-      itx = mkHost {
-        system = "x86_64-linux";
-        hostModule = ./hosts/itx;
-        homeModules = [ ./hm-profile/niri-desktop.nix ];
-        extraSpecialArgs = {
-          alien-pkgs = nix-alien.packages.x86_64-linux;
-        };
-      };
-
-      thinkpad = mkHost {
-        system = "x86_64-linux";
-        hostModule = ./hosts/thinkpad;
-        homeModules = [ ./hm-profile/niri-desktop.nix ./hosts/thinkpad/home.nix ];
-      };
-
-      msr1 = mkHost {
-        system = "aarch64-linux";
-        hostModule = ./hosts/msr1;
-      };
-
-      yoga = mkHost {
-        system = "aarch64-linux";
-        hostModule = ./hosts/yoga;
-        homeModules = [ ./hm-profile/niri-desktop.nix ];
-        extraModules = [
-          x1e-nixos-config.nixosModules.x1e
-        ];
-      };
     };
-  };
 }

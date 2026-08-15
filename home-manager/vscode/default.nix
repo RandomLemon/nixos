@@ -1,4 +1,10 @@
-{ pkgs, lib, username, ... }: {
+{
+  pkgs,
+  lib,
+  username,
+  ...
+}:
+{
   # Visual Studio Code
   programs.vscode = {
     enable = true;

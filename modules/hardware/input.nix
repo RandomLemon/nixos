@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 {
   # Select internationalisation properties.
   i18n.defaultLocale = "zh_CN.UTF-8";
@@ -35,8 +40,15 @@
     nerd-fonts.jetbrains-mono
   ];
   fonts.fontconfig.defaultFonts = {
-    sansSerif = [ "Noto Sans CJK SC" "Noto Sans" "DejaVu Sans" ];
-    serif     = [ "Noto Serif" "DejaVu Serif" ];
+    sansSerif = [
+      "Noto Sans CJK SC"
+      "Noto Sans"
+      "DejaVu Sans"
+    ];
+    serif = [
+      "Noto Serif"
+      "DejaVu Serif"
+    ];
     monospace = [
       "JetBrainsMono Nerd Font"
       "JetBrains Mono"

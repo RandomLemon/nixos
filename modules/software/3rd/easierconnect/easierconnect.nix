@@ -1,12 +1,13 @@
-{ stdenv
-, fetchurl
-, autoPatchelfHook
-, makeWrapper
-, lib
-, callPackage
-, unzip
-, ...
-} @ args:
+{
+  stdenv,
+  fetchurl,
+  autoPatchelfHook,
+  makeWrapper,
+  lib,
+  callPackage,
+  unzip,
+  ...
+}@args:
 
 stdenv.mkDerivation rec {
   pname = "easierconnect";
@@ -16,7 +17,10 @@ stdenv.mkDerivation rec {
     hash = "sha256-mmhsOGGgQTLOexT9JAVQ6I9g4rD11PwRhlGaqb0nNbo=";
   };
 
-  nativeBuildInputs = [ unzip makeWrapper ];
+  nativeBuildInputs = [
+    unzip
+    makeWrapper
+  ];
 
   unpackPhase = ''
     unzip ${src}
@@ -35,6 +39,5 @@ stdenv.mkDerivation rec {
     # mv usr/share/applications/EasyConnect.desktop $out/share/applications/EasyConnect.desktop
     # mv usr/share/pixmaps/EasyConnect.png $out/share/pixmaps/EasyConnect.png
   '';
-
 
 }

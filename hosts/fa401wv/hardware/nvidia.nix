@@ -1,10 +1,18 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   # NVIDIA fxxk U
-  services.xserver.videoDrivers = lib.mkForce ["amdgpu" "nvidia"];
+  services.xserver.videoDrivers = lib.mkForce [
+    "amdgpu"
+    "nvidia"
+  ];
   hardware = {
-    graphics = { 
+    graphics = {
       enable = true;
       enable32Bit = true;
     };
@@ -32,7 +40,7 @@
         };
         amdgpuBusId = "PCI:101:0:0";
         nvidiaBusId = "PCI:100:0:0";
-      };  
+      };
 
       powerManagement = {
         enable = true;

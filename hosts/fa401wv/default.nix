@@ -1,4 +1,12 @@
-{ config, pkgs, lib, username, alien-pkgs, omp-pkgs, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  username,
+  alien-pkgs,
+  omp-pkgs,
+  ...
+}:
 {
   imports = [
     ./hardware-configuration.nix
@@ -23,10 +31,10 @@
   # nix-ld
   programs.nix-ld.enable = true;
 
-  # special environments
   environment.systemPackages = [
-      alien-pkgs.nix-alien
-      omp-pkgs.default
+    # special environments
+    alien-pkgs.nix-alien
+    omp-pkgs.default
   ];
 
   # Steam — force AMD iGPU (Strix 880M/890M @ 1002:150e, PCI 65:00.0).

@@ -24,6 +24,6 @@
 
   # special environments
   environment.systemPackages = [
-      alien-pkgs.nix-alien
+    alien-pkgs.nix-alien
   ];
 }
