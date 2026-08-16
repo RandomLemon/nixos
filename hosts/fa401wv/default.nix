@@ -35,6 +35,7 @@
     # special environments
     alien-pkgs.nix-alien
     omp-pkgs.default
+    pkgs.gh
   ];
 
   # Steam — force AMD iGPU (Strix 880M/890M @ 1002:150e, PCI 65:00.0).
