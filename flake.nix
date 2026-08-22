@@ -110,6 +110,10 @@
             ./hm-profile/niri-desktop.nix
             ./hosts/thinkpad/home.nix
           ];
+          extraSpecialArgs = {
+            alien-pkgs = nix-alien.packages.x86_64-linux;
+            omp-pkgs = omp-nix.packages.x86_64-linux;
+          };
         };
 
         msr1 = mkHost {

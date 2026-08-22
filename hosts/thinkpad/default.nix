@@ -3,6 +3,8 @@
   pkgs,
   lib,
   username,
+  alien-pkgs,
+  omp-pkgs,
   ...
 }:
 {
@@ -18,6 +20,13 @@
     ../../modules/software/desktop/niri.nix
   ];
   networking.hostName = "thinkpad";
+
+  environment.systemPackages = [
+    # special environments
+    alien-pkgs.nix-alien
+    omp-pkgs.default
+    pkgs.gh
+  ];
 
   # Use Grub and MBR Legacy Bootloader
   boot.loader.systemd-boot.enable = false;
