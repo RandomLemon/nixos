@@ -25,7 +25,7 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" = {
-    device = "/dev/disk/by-uuid/44d60d6a-f689-4b46-8079-9c1809394f39";
+    device = "/dev/disk/by-uuid/9fd9a7e9-b741-4b6f-a8e2-970fd31c93ca";
     fsType = "btrfs";
     options = [
       "subvol=@"
@@ -35,7 +35,7 @@
   };
 
   fileSystems."/home" = {
-    device = "/dev/disk/by-uuid/44d60d6a-f689-4b46-8079-9c1809394f39";
+    device = "/dev/disk/by-uuid/9fd9a7e9-b741-4b6f-a8e2-970fd31c93ca";
     fsType = "btrfs";
     options = [
       "subvol=@home"
@@ -45,7 +45,7 @@
   };
 
   fileSystems."/nix" = {
-    device = "/dev/disk/by-uuid/44d60d6a-f689-4b46-8079-9c1809394f39";
+    device = "/dev/disk/by-uuid/9fd9a7e9-b741-4b6f-a8e2-970fd31c93ca";
     fsType = "btrfs";
     options = [
       "subvol=@nix"
@@ -54,28 +54,16 @@
     ];
   };
 
-  fileSystems."/var/log" = {
-    device = "/dev/disk/by-uuid/44d60d6a-f689-4b46-8079-9c1809394f39";
+  fileSystems."/swap" = {
+    device = "/dev/disk/by-uuid/9fd9a7e9-b741-4b6f-a8e2-970fd31c93ca";
     fsType = "btrfs";
     options = [
-      "subvol=@log"
-      "compress=zstd"
-      "noatime"
-    ];
-  };
-
-  fileSystems."/var/cache" = {
-    device = "/dev/disk/by-uuid/44d60d6a-f689-4b46-8079-9c1809394f39";
-    fsType = "btrfs";
-    options = [
-      "subvol=@cache"
-      "compress=zstd"
-      "noatime"
+      "subvol=@swap"
     ];
   };
 
   fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/D9A3-2B8F";
+    device = "/dev/disk/by-uuid/D468-180E";
     fsType = "vfat";
     options = [
       "fmask=0022"
