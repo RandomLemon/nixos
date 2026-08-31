@@ -9,6 +9,7 @@
 
     ../../modules/software/develop/direnv.nix
     ../../modules/software/develop/distrobox.nix
+    ../../modules/software/develop/python.nix
 
     ../../modules/software/game/minecraft.nix
     ../../modules/software/game/steam.nix
