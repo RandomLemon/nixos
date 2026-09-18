@@ -34,7 +34,7 @@
 
   boot.loader.grub = {
     enable = true;
-    device = "/dev/sda";
+    device = "/dev/disk/by-id/ata-Samsung_SSD_860_EVO_250GB_S3YLNX0K745202R";
   };
 
   hardware.cpu.intel.updateMicrocode = true;
