@@ -21,7 +21,7 @@
 
   # Secure
   services.gnome-keyring.enable = true;
-  home.packages = [ pkgs.gcr ];
+  home.packages = [ pkgs.gcr_4 ];
 
   # Theme
   dconf = {
