@@ -15,7 +15,7 @@
   ];
 
   # 3. 让当前用户能用 KVM 跑模拟器
-  users.users.${username}.extraGroups = [ "kvm" ];
+  # users.users.${username}.extraGroups = [ "kvm" ];
 
   # 4. （可选）adb/fastboot 的 udev 规则，接真机调试用
   # services.udev.packages = [ pkgs.android-udev-rules ];
