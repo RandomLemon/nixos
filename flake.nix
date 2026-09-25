@@ -87,7 +87,10 @@
         tx = mkHost {
           system = "x86_64-linux";
           hostModule = ./hosts/fa401wv;
-          homeModules = [ ./hm-profile/niri-desktop.nix ];
+          homeModules = [
+            ./hm-profile/niri-desktop.nix
+            ./hosts/fa401wv/home.nix
+          ];
           extraSpecialArgs = {
             alien-pkgs = nix-alien.packages.x86_64-linux;
             omp-pkgs = omp-nix.packages.x86_64-linux;
