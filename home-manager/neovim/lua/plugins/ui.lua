@@ -2,16 +2,6 @@
 vim.g.adwaita_darker = true
 vim.cmd.colorscheme("adwaita")
 
--- Status line
-require("lualine").setup({
-  options = { theme = "adwaita" },
-  sections = {
-    lualine_z = {
-      require("opencode").statusline,
-    },
-  },
-})
-
 -- Indent guides
 require("ibl").setup({
   indent = { char = "│" },

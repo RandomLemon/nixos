@@ -87,8 +87,6 @@ to explain, copy, and modify.
     |-- code.nix
     |-- alacritty/
     |-- neovim/
-    |-- opencode/
-    |-- zed/
     `-- desktop/
         |-- niri/
         |-- kanshi/
@@ -227,8 +225,7 @@ Important files:
   default applications.
 - `zsh.nix` configures Zsh, Oh My Zsh, shell plugins, and aliases.
 - `code.nix` installs and configures VS Code / Cursor.
-- `zed/`, `neovim/`, `opencode/`, and `alacritty/` configure the corresponding
-  editors and terminal.
+- `neovim/` and `alacritty/` configure the corresponding editor and terminal.
 - `desktop/niri/` contains the active Niri desktop configuration.
 - `desktop/` also holds configs for `kanshi`, `mako`, `swayidle`, `swaylock`,
   `wallpaper`, `waybar`, `wlogout`, and `wofi`.
