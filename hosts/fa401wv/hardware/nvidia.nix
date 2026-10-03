@@ -64,7 +64,7 @@
 
   # MultiGPU
   environment.sessionVariables = {
-    __EGL_VENDOR_LIBRARY_FILENAMES = "/run/opengl-driver/share/glvnd/egl_vendor.d/50_mesa.json";
+    __EGL_VENDOR_LIBRARY_FILENAMES = "/run/opengl-driver/share/glvnd/egl_vendor.d/50_mesa.json:/run/opengl-driver/share/glvnd/egl_vendor.d/10_nvidia.json";
     WLR_DRM_DEVICES = "/dev/dri/card1:/dev/dri/card0";
     KWIN_DRM_DEVICES = "/dev/dri/card1:/dev/dri/card0";
     AQ_DRM_DEVICES = "/dev/dri/card1:/dev/dri/card0";
