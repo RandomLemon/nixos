@@ -38,7 +38,7 @@
           enable = true;
           enableOffloadCmd = true;
         };
-        amdgpuBusId = "PCI:101:0:0";
+        amdgpuBusId = "PCI:102:0:0";
         nvidiaBusId = "PCI:100:0:0";
       };
 
@@ -48,6 +48,17 @@
       };
 
       dynamicBoost.enable = true;
+    };
+  };
+
+  services.cardwired = {
+    enable = true;
+    settings = {
+        auto_apply_gpu_state = true;
+        experimental_nvidia_block = true;
+        battery_auto_switch = true;
+        battery_auto_switch_mode = "hybrid";
+        external_display_auto_switch = false;
     };
   };
 

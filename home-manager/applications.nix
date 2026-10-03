@@ -13,7 +13,7 @@
     qq
     v2ray
     v2raya
-    libreoffice-qt6-fresh
+    libreoffice-qt
     vlc
     localsend
 
