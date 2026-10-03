@@ -119,11 +119,6 @@
           };
         };
 
-        msr1 = mkHost {
-          system = "aarch64-linux";
-          hostModule = ./hosts/msr1;
-        };
-
         yoga = mkHost {
           system = "aarch64-linux";
           hostModule = ./hosts/yoga;

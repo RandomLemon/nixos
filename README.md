@@ -19,7 +19,6 @@ Rebuild one of the configured hosts:
 ```bash
 sudo nixos-rebuild switch --flake /etc/nixos#tx
 sudo nixos-rebuild switch --flake /etc/nixos#thinkpad
-sudo nixos-rebuild switch --flake /etc/nixos#msr1
 ```
 
 There is also a shell alias named `update`, defined in
@@ -70,7 +69,6 @@ to explain, copy, and modify.
 |   |-- fa401wv/                    # tx
 |   |-- itx/
 |   |-- thinkpad/
-|   |-- msr1/
 |   `-- yoga/
 |-- modules/
 |   |-- hardware/
@@ -120,9 +118,8 @@ flake.nix
   a host module directory, optional Home Manager modules, extra special args
   and extra modules.
 - The user name shared by the hosts: `int16`. Change it as you wish.
-- Home Manager integration: every host except `msr1` imports the
-  `hm-profile/niri-desktop.nix` profile, which pulls in the shared user
-  modules from `home-manager/`.
+- Home Manager integration: every host imports the `hm-profile/niri-desktop.nix`
+  profile, which pulls in the shared user modules from `home-manager/`.
 
 This is the first file to read if you want to understand how the whole project
 is assembled.
@@ -138,7 +135,6 @@ The flake currently exposes these NixOS configurations:
 | `tx` | `hosts/fa401wv` | `x86_64-linux` | Yes | ASUS FA401WV 2024, Ryzen HX 370 + RTX 4060 |
 | `itx` | `hosts/itx` | `x86_64-linux` | Yes | AMD desktop ITX machine, same desktop stack as `tx` |
 | `thinkpad` | `hosts/thinkpad` | `x86_64-linux` | Yes | Legacy ThinkPad (T430) with legacy GRUB boot |
-| `msr1` | `hosts/msr1` | `aarch64-linux` | No | CIX P1 ARM server with a custom 7.0.1 kernel |
 | `yoga` | `hosts/yoga` | `aarch64-linux` | Yes | Lenovo Yoga Air 14s Q8X9 (Snapdragon X1E80100) |
 
 Each host usually contains:
@@ -174,9 +170,6 @@ development stack) but targets a desktop ITX machine.
 `hosts/thinkpad/default.nix` uses the same shared base, but overrides bootloader
 settings to use legacy GRUB on `/dev/sda`. Its `home.nix` adds extra packages
 such as wine and telegram-desktop on top of the shared Niri profile.
-
-`hosts/msr1/default.nix` is more standalone because it targets ARM64 hardware
-and builds a custom CIX P1 kernel (7.0.1 with `msr1-7.0.1.patch`).
 
 `hosts/yoga/default.nix` targets a Snapdragon X1E80100 laptop. It uses the
 `x1e-nixos-config` flake module, builds the Ubuntu Concept kernel
@@ -286,12 +279,6 @@ Notable pieces:
 The ThinkPad host uses the shared desktop base but has different boot settings:
 systemd-boot is disabled and GRUB is installed to `/dev/sda`.
 
-### MSR1
-
-The MSR1 host targets `aarch64-linux` and keeps most configuration inside its
-own host file because it uses a custom CIX P1 kernel setup (Linux 7.0.1 with
-the `msr1-7.0.1.patch` and many extra kernel options). Currently it doesn't work...
-
 ### Yoga
 
 The Yoga host targets the Lenovo Yoga Air 14s Q8X9 (Snapdragon X1E80100).
@@ -373,7 +360,7 @@ To use this repository as a template for a new machine:
    ```
 
    Omit `homeModules` (or leave it empty) if the machine needs no Home Manager
-   profile, as `msr1` does.
+   profile.
 
 6. Build or switch:
 

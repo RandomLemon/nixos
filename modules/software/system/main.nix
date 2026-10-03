@@ -59,6 +59,7 @@
     s-tui
     unzip
     zip
+    p7zip
     unar
     ntfs3g
     # toybox # Linux Utils

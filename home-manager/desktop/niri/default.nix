@@ -2,6 +2,7 @@
 {
   imports = [
     ../../alacritty
+    ../../thunar
     ../kanshi
     ../mako
     ../wallpaper
@@ -23,6 +24,14 @@
     networkmanagerapplet
     brightnessctl
   ];
+
+  xdg.portal = {
+    enable = true;
+    # 添加 GTK portal 作为文件选择器的后端
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    # 可选：针对 niri 桌面环境指定文件选择器使用 GTK
+    config.niri."org.freedesktop.impl.portal.FileChooser" = [ "gtk" ];
+  };
 
   xdg.configFile."niri/config.kdl".source = ./config/niri.kdl;
   xdg.configFile."niri/input.kdl".source = ./config/input.kdl;

@@ -29,9 +29,6 @@
   services.gnome.gnome-keyring.enable = true; # secret service
   security.pam.services.swaylock = { };
 
-  environment.systemPackages = [
-    pkgs.nautilus
-    pkgs.file-roller
-  ];
   services.gvfs.enable = true;
+  services.tumbler.enable = true;
 }
