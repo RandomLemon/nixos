@@ -39,15 +39,11 @@
     defaultApplications = {
       # https://wiki.nixos.org/wiki/Default_applications
 
-      "inode/directory" = "org.kde.dolphin.desktop";
-      "x-scheme-handler/file" = "org.kde.dolphin.desktop";
-      "application/zip" = "org.kde.ark.desktop";
+      "inode/directory" = "thunar.desktop";
+      "x-scheme-handler/file" = "thunar.desktop";
+      "application/zip" = "org.gnome.FileRoller.desktop";
 
-      "text/plain" = [
-        "org.kde.kate.desktop"
-        "code.desktop"
-      ];
-      "image/x-mng" = "org.kde.gwenview.desktop";
+      "text/plain" = "code.desktop";
       "application/pdf" = "firefox-esr.desktop";
 
       "text/html" = "firefox-esr.desktop";
