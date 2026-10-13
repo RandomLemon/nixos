@@ -85,6 +85,10 @@
         "vfio-pci.ids=10de:28e0,10de:22be"
       ];
       boot.blacklistedKernelModules = lib.mkForce [ "nouveau" ];
+
+      services.udev.extraRules = ''
+        SUBSYSTEM=="vfio", KERNEL=="*", OWNER="root", GROUP="kvm", MODE="0660"
+      '';
     };
   };
 }
