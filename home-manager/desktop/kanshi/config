@@ -1,30 +1,34 @@
-output "Samsung Display Corp. 0x4189 Unknown" {
-	mode 2944x1840@89.999
-	scale 1.75
+output "BOE NE140QDM-NX7 Unknown" {
+	mode 2560x1600@165.000
+	scale 1.5
 	position 0,0
-	alias $YOGAAIR14S
+	alias $TX
 }
 
 output "Shenzhen KTC Technology Group H24T7 0x00000001" {
-    mode 2560x1440@180.000
+    mode 2560x1440@199.998
     scale 1.25
     position 0,0
     alias $H24T7
+}
+
+output DP-2 {
+	mode 1920x1080@60.000
+	scale 1.25
+	position 0,0
+	alias $OUTPUT
 }
 
 # ===
 # Matches when an external monitor is connected alongside the laptop panel.
 # Update the output name with `niri msg outputs` or `wlr-randr`.
 
-profile laptop_1 {
-	output $YOGAAIR14S enable
+profile desktop {
+    output $H24T7 enable
 }
 
-profile docked_1 {
-	output $YOGAAIR14S enable
+profile tx_docked {
+	output $TX disable
 	output $H24T7 enable
 }
 
-profile desktop_1 {
-    output $H24T7 enable
-}
