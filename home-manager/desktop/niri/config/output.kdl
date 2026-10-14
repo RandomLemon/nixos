@@ -5,6 +5,19 @@
 // Find more information on the wiki:
 // https://niri-wm.github.io/niri/Configuration:-Outputs
 // Remember to uncomment the node by removing "/-"!
+
+output "BOE NE140QDM-NX7 Unknown" {
+    mode "2560x1600@165.000"
+    variable-refresh-rate
+    scale 1.5
+}
+
+output "Shenzhen KTC Technology Group H24T7 0x00000001" {
+    mode "2560x1440"
+    variable-refresh-rate on-demand=true
+    scale 1.25
+}
+
 /-output "eDP-1" {
     // Uncomment this line to disable this output.
     // off

@@ -1,22 +1,9 @@
 output "BOE NE140QDM-NX7 Unknown" {
-	mode 2560x1600@165.000
-	scale 1.5
-	position 0,0
 	alias $TX
 }
 
 output "Shenzhen KTC Technology Group H24T7 0x00000001" {
-    mode 2560x1440@199.998
-    scale 1.25
-    position 0,0
     alias $H24T7
-}
-
-output DP-2 {
-	mode 1920x1080@60.000
-	scale 1.25
-	position 0,0
-	alias $OUTPUT
 }
 
 # ===
@@ -28,7 +15,7 @@ profile desktop {
 }
 
 profile tx_docked {
-	output $TX disable
+	output $TX enable
 	output $H24T7 enable
 }
 
