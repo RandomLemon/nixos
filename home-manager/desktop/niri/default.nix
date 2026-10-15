@@ -27,10 +27,22 @@
 
   xdg.portal = {
     enable = true;
-    # 添加 GTK portal 作为文件选择器的后端
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-    # 可选：针对 niri 桌面环境指定文件选择器使用 GTK
-    config.niri."org.freedesktop.impl.portal.FileChooser" = [ "gtk" ];
+    extraPortals = [
+      pkgs.xdg-desktop-portal-gtk
+      pkgs.xdg-desktop-portal-hyprland
+    ];
+    config = {
+      common = {
+        default = [
+          "gtk"
+        ];
+      };
+      niri = {
+        "org.freedesktop.impl.portal.FileChooser" = [ "gtk" ];
+        "org.freedesktop.impl.portal.ScreenCast" = [ "hyprland" ];
+        "org.freedesktop.impl.portal.RemoteDesktop" = [ "hyprland" ];
+      };
+    };
   };
 
   xdg.configFile."niri/config.kdl".source = ./config/niri.kdl;
