@@ -3,6 +3,7 @@
   imports = [
     ../../alacritty
     ../../thunar
+    ../../yazi
     ../kanshi
     ../mako
     ../wallpaper

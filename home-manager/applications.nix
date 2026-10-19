@@ -16,6 +16,7 @@
     libreoffice-qt
     vlc
     localsend
+    feh
 
     # wechat
     wemeet
@@ -51,6 +52,14 @@
       "x-scheme-handler/https" = "firefox-esr.desktop";
       "x-scheme-handler/about" = "firefox-esr.desktop";
       "x-scheme-handler/unknown" = "firefox-esr.desktop";
+      
+      "image/bmp" = "feh.desktop";
+      "image/gif" = "feh.desktop";
+      "image/jpeg" = "feh.desktop";
+      "image/png" = "feh.desktop";
+      "image/tiff" = "feh.desktop";
+      "image/webp" = "feh.desktop";
+      "image/heic" = "feh.desktop";
     };
   };
 }
